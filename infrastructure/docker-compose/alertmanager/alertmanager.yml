@@ -1,0 +1,42 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ['alertname', 'severity']
+  group_wait: 10s
+  group_interval: 10s
+  repeat_interval: 1h
+  receiver: 'default-receiver'
+  routes:
+    - match:
+        severity: critical
+      receiver: 'critical-receiver'
+    - match:
+        severity: warning
+      receiver: 'warning-receiver'
+
+receivers:
+  - name: 'default-receiver'
+    # Configure your notification channels here
+    # Example webhook:
+    # webhook_configs:
+    #   - url: 'http://localhost:5001/alerts'
+    #     send_resolved: true
+
+  - name: 'critical-receiver'
+    # For critical alerts - could integrate with PagerDuty, Slack, etc.
+    # pagerduty_configs:
+    #   - service_key: 'your-service-key'
+
+  - name: 'warning-receiver'
+    # For warning alerts - less urgent channel
+    # slack_configs:
+    #   - api_url: 'https://hooks.slack.com/services/xxx'
+    #     channel: '#alerts-warning'
+
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'instance']
