@@ -91,6 +91,7 @@ git push origin feature/my-feature
 - Can you explain what a VPC is?
 
 **Brush up:** 
+- [Cloud Engineering Foundation](https://github.com/pxkundu/AWS-cloud_engineering_topics)
 - [AWS Cloud Practitioner](https://aws.amazon.com/training/digital/aws-cloud-practitioner-essentials/)
 - [GCP Fundamentals](https://cloud.google.com/training/cloud-infrastructure)
 
@@ -118,7 +119,10 @@ jobs:
       - run: docker run myapp pytest
 ```
 
-**Brush up:** [DevOps Roadmap](https://roadmap.sh/devops)
+**Brush up:** 
+- [DevSecOps Bootcamp](https://github.com/pxkundu/DevSecOps-Bootcamp)
+- [DevOps Roadmap](https://roadmap.sh/devops)
+- [GenAI Builder Bootcamp](https://github.com/pxkundu/aws-genai-labs-builder)
 
 ---
 

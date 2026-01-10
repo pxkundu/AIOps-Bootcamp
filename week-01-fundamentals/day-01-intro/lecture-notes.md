@@ -14,6 +14,15 @@ By the end of this session, you will:
 
 ---
 
+## 📑 Preparation & Resources
+
+> [!TIP]
+> **Daily Prerequisites:** Before you start this lecture, ensure you have a basic understanding of YAML and Linux CLI basics as outlined in the [Resources Guide](resources/RESOURCES.md#daily-prerequisites-getting-ready).
+
+**Quick Links:**
+*   📂 [Supporting Code & External Links](resources/RESOURCES.md)
+*   💻 [Exercise 1: Environment Setup](exercises/exercise-01-setup.md)
+
 ## 📖 Lecture Content
 
 ### 1. What is AIOps?
@@ -25,9 +34,16 @@ By the end of this session, you will:
 
 #### Evolution of IT Operations
 
-```
-Traditional Monitoring → APM → Observability → AIOps
-     (1990s)           (2000s)    (2010s)      (2020s)
+```mermaid
+graph LR
+    A["Traditional Monitoring<br/>(1990s)"] --> B["APM<br/>(2000s)"]
+    B --> C["Observability<br/>(2010s)"]
+    C --> D["AIOps<br/>(2020s)"]
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bfb,stroke:#333,stroke-width:2px
+    style D fill:#f96,stroke:#333,stroke-width:4px
 ```
 
 | Era | Approach | Limitations |
@@ -41,21 +57,19 @@ Traditional Monitoring → APM → Observability → AIOps
 
 ### 2. The AIOps Lifecycle
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        AIOps Pipeline                           │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  ┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐     │
-│  │  COLLECT │ → │ ANALYZE  │ → │ CORRELATE│ → │   ACT    │     │
-│  └──────────┘   └──────────┘   └──────────┘   └──────────┘     │
-│       ↓              ↓              ↓              ↓           │
-│   Metrics        Anomaly        Root Cause      Auto-          │
-│   Logs           Detection      Analysis        Remediation    │
-│   Traces         Forecasting    Alert Groups    Runbooks       │
-│   Events         Classification Topology        Notifications  │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph "AIOps Pipeline"
+    direction LR
+    COLLECT["<b>COLLECT</b><br/>Metrics, Logs,<br/>Traces, Events"] --> ANALYZE["<b>ANALYZE</b><br/>Anomaly Detection,<br/>Forecasting,<br/>Classification"]
+    ANALYZE --> CORRELATE["<b>CORRELATE</b><br/>Root Cause Analysis,<br/>Alert Groups,<br/>Topology"]
+    CORRELATE --> ACT["<b>ACT</b><br/>Auto-Remediation,<br/>Runbooks,<br/>Notifications"]
+    end
+    
+    style COLLECT fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    style ANALYZE fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style CORRELATE fill:#f1f8e9,stroke:#33691e,stroke-width:2px
+    style ACT fill:#fce4ec,stroke:#880e4f,stroke-width:2px
 ```
 
 #### Key Capabilities
@@ -71,6 +85,19 @@ Traditional Monitoring → APM → Observability → AIOps
 ### 3. The Three Pillars of Observability
 
 AIOps builds upon the three pillars of observability:
+
+```mermaid
+graph TD
+    subgraph "The Three Pillars"
+    M["<b>METRICS</b><br/>Aggregated numeric data<br/>(What is happening?)"] --- L["<b>LOGS</b><br/>Discrete event data<br/>(Why is it happening?)"]
+    L --- T["<b>TRACES</b><br/>Request flow data<br/>(Where is it happening?)"]
+    M --- T
+    end
+    
+    style M fill:#fff9c4,stroke:#fbc02d
+    style L fill:#e1f5fe,stroke:#0288d1
+    style T fill:#f1f8e9,stroke:#689f38
+```
 
 #### Metrics
 Numeric measurements over time.
@@ -132,26 +159,29 @@ TraceID: abc123
 
 ### 5. AIOps Technology Stack
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                      Visualization Layer                        │
-│                    Grafana, Kibana, Custom UIs                   │
-├─────────────────────────────────────────────────────────────────┤
-│                    Intelligence Layer                           │
-│           ML Models, Correlation Engine, RCA                    │
-├─────────────────────────────────────────────────────────────────┤
-│                      Storage Layer                              │
-│        Prometheus, Elasticsearch, InfluxDB, Object Store        │
-├─────────────────────────────────────────────────────────────────┤
-│                    Processing Layer                             │
-│              Kafka, Flink, Spark, Python                        │
-├─────────────────────────────────────────────────────────────────┤
-│                    Collection Layer                             │
-│     OpenTelemetry, Fluentd, Prometheus Exporters, APIs          │
-├─────────────────────────────────────────────────────────────────┤
-│                    Infrastructure                               │
-│            Servers, Containers, Cloud, Network                  │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph "AIOps Technology Stack"
+    VIS["<b>Visualization Layer</b><br/>Grafana, Kibana, Custom UIs"]
+    INT["<b>Intelligence Layer</b><br/>ML Models, Correlation Engine, RCA"]
+    STO["<b>Storage Layer</b><br/>Prometheus, Elasticsearch, InfluxDB"]
+    PRO["<b>Processing Layer</b><br/>Kafka, Flink, Spark, Python"]
+    COL["<b>Collection Layer</b><br/>OpenTelemetry, Fluentd, Exporters"]
+    INF["<b>Infrastructure</b><br/>Servers, Containers, Cloud, Network"]
+    
+    VIS --- INT
+    INT --- STO
+    STO --- PRO
+    PRO --- COL
+    COL --- INF
+    end
+    
+    style VIS fill:#f3e5f5,stroke:#4a148c
+    style INT fill:#ede7f6,stroke:#311b92
+    style STO fill:#e8eaf6,stroke:#1a237e
+    style PRO fill:#e3f2fd,stroke:#0d47a1
+    style COL fill:#e0f2f1,stroke:#004d40
+    style INF fill:#f1f8e9,stroke:#1b5e20
 ```
 
 ---

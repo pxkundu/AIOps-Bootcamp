@@ -2,6 +2,8 @@
 
 > **Transform from DevOps/SWE to Job-Ready AIOps Engineer in 8 Weeks**
 
+📖 [Read the Bootcamp Background & Why AIOps?](BACKGROUND.md)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
