@@ -69,20 +69,26 @@ Companies like Google, Netflix, and Uber aren't looking for people who can "moni
 This is not a theoretical course. It is an execution-driven transition.
 
 ```mermaid
-timeline
-    title AIOps Master Roadmap
+gantt
+    title AIOps Bootcamp Master Roadmap
+    dateFormat  YYYY-MM-DD
+    axisFormat  Week %U
+    
     section Phase 1: Foundation
-        Week 1 : Observability Pillars : OTel, Prometheus, Jaeger
-        Week 2 : Data Engineering : Log Pipelines, InfluxDB, Feature Engineering
+    Observability Pillars (OTel, Prometheus, Jaeger) :a1, 2026-01-01, 7d
+    Data Engineering (Log Pipelines, Feature Eng)     :a2, after a1, 7d
+    
     section Phase 2: Core ML
-        Week 3 : Operational ML : Scikit-learn, Time-Series Analysis
-        Week 4 : Anomaly Detection : Isolation Forest, Pattern Mining
+    Operational ML (Scikit-learn, Time-Series)      :b1, after a2, 7d
+    Anomaly Detection (Isolation Forest)             :b2, after b1, 7d
+    
     section Phase 3: Advanced AIOps
-        Week 5 : Predictive Analytics : Prophet, Failure Forecasting
-        Week 6 : Intelligent Alerting : RCA, Dynamic Thresholds
+    Predictive Analytics (Prophet, Forecasting)     :c1, after b2, 7d
+    Intelligent Alerting (RCA, Dynamic Thresholds)  :c2, after c1, 7d
+    
     section Phase 4: Full Automation
-        Week 7 : Auto-Remediation : LLM integration, K8s Self-Healing
-        Week 8 : Capstone Delivery : End-to-End AIOps Platform
+    Auto-Remediation (LLM, Self-Healing K8s)         :d1, after c2, 7d
+    Capstone Project Delivery                        :d2, after d1, 7d
 ```
 
 ---
