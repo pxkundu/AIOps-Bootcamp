@@ -57,20 +57,12 @@ week-01-fundamentals/
 ├── README.md                  # This file
 ├── day-01-intro/              # Introduction to AIOps
 │   ├── lecture-notes.md
-│   ├── exercises/
-│   └── solutions/
-├── day-02-observability/      # Prometheus + Grafana
-│   ├── lecture-notes.md
-│   ├── exercises/
-│   └── solutions/
-├── day-03-instrumentation/    # OpenTelemetry
-│   ├── lecture-notes.md
-│   ├── exercises/
-│   └── solutions/
-├── day-04-tools/              # Tool comparison
-│   ├── lecture-notes.md
-│   └── exercises/
-└── project/                   # Weekly mini-project
+├── day-01-intro/             # AIOps intro & Environment setup
+├── day-02-pillars/           # Three Pillars Deep Dive (Metrics/Logs/Traces)
+├── day-03-stack/             # Hands-on: Prometheus, Grafana, Jaeger
+├── day-04-instrumentation/   # OpenTelemetry & App instrumentation
+├── day-05-tools/             # Industry tools (Datadog, etc.)
+└── project/                  # Week 1 mini-project
     ├── requirements.md
     └── starter-code/
 ```
