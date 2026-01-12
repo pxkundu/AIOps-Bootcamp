@@ -1,4 +1,4 @@
-# Day 3-4: Observability Stack Setup
+# Day 3: Observability Stack - Hands-On Deployment
 
 > **Duration:** 8 hours | **Difficulty:** Intermediate
 
@@ -7,11 +7,31 @@
 ## 🎯 Learning Objectives
 
 By the end of this session, you will:
-1. Deploy Prometheus for metrics collection
-2. Set up Grafana for visualization
-3. Deploy Jaeger for distributed tracing
-4. Create your first dashboards and alerts
-5. Understand how these tools integrate
+1. Deploy a complete observability stack using Docker Compose
+2. Configure Prometheus for metrics collection and scraping
+3. Build Grafana dashboards with real-time data
+4. Deploy Jaeger for distributed tracing
+5. Write PromQL queries for operational insights
+6. Create your first alerting rules
+
+---
+
+## 📑 Preparation & Resources
+
+> [!TIP]
+> **Prerequisites:** Ensure Docker Desktop is running and you have completed Day 2's pillar concepts. Review [Docker Compose Networking](https://docs.docker.com/compose/networking/) if needed.
+
+**Quick Links:**
+*   📂 [Resources & Troubleshooting](resources/RESOURCES.md)
+*   💻 [Exercise 1: Stack Deployment](exercises/exercise-01-deploy.md)
+*   📊 [PromQL & Grafana Cheat Sheet](cheatsheet.md)
+
+**🎮 Interactive Learning:**
+*   🎯 [PromQL Challenge Game](promql-challenges.md) - Level up your query skills!
+*   🚨 [Incident Response Simulation](incident-simulation.md) - Practice debugging under pressure
+*   🔥 [Chaos Engineering Lab](chaos-lab.md) - Break it to learn it
+*   🏆 [Achievement System](achievements.md) - Track your progress & earn badges
+*   ⚡ [Query Performance Tool](tools/promql-benchmark.py) - Optimize your queries
 
 ---
 
@@ -21,36 +41,49 @@ By the end of this session, you will:
 
 Prometheus is the de-facto standard for metrics in cloud-native environments.
 
-```
-┌─────────────────┐         ┌─────────────────┐
-│   Application   │ ←scrape │   Prometheus    │
-│   /metrics      │         │                 │
-└─────────────────┘         │  ┌───────────┐  │
-                            │  │  TSDB     │  │
-┌─────────────────┐         │  │ (Storage) │  │
-│   Exporters     │ ←scrape │  └───────────┘  │
-│   (node, etc.)  │         │                 │
-└─────────────────┘         │  ┌───────────┐  │
-                            │  │  Rules    │  │
-                            │  │ (Alerts)  │  │
-                            │  └───────────┘  │
-                            └───────┬─────────┘
-                                    │
-                            ┌───────▼─────────┐
-                            │    Grafana      │
-                            │  (Dashboards)   │
-                            └─────────────────┘
+```mermaid
+graph TD
+    subgraph "Data Sources"
+    APP["Application<br/>/metrics endpoint"]
+    EXP["Node Exporter<br/>System Metrics"]
+    end
+    
+    subgraph "Prometheus Server"
+    SCRAPE["Scrape Engine<br/>(Pull Model)"]
+    TSDB["Time-Series DB<br/>(Local Storage)"]
+    RULES["Rules Engine<br/>(Alerts & Recording)"]
+    API["HTTP API<br/>(PromQL Queries)"]
+    end
+    
+    subgraph "Visualization"
+    GRAF["Grafana<br/>Dashboards"]
+    end
+    
+    APP -->|scrape every 15s| SCRAPE
+    EXP -->|scrape every 15s| SCRAPE
+    SCRAPE --> TSDB
+    TSDB --> RULES
+    TSDB --> API
+    API --> GRAF
+    
+    style APP fill:#e1f5fe,stroke:#01579b
+    style EXP fill:#e1f5fe,stroke:#01579b
+    style SCRAPE fill:#fff3e0,stroke:#e65100
+    style TSDB fill:#f1f8e9,stroke:#33691e
+    style RULES fill:#fce4ec,stroke:#880e4f
+    style API fill:#f3e5f5,stroke:#4a148c
+    style GRAF fill:#e0f2f1,stroke:#004d40
 ```
 
 #### Key Concepts
 
-| Concept | Description |
-|---------|-------------|
-| **Scraping** | Prometheus pulls metrics from targets |
-| **Exporters** | Expose metrics in Prometheus format |
-| **TSDB** | Time-series database for storage |
-| **PromQL** | Query language for metrics |
-| **Rules** | Alert conditions and recording rules |
+| Concept | Description | Why It Matters for AIOps |
+|---------|-------------|-------------------------|
+| **Pull Model** | Prometheus scrapes targets | Centralized control, easier to secure |
+| **Exporters** | Expose metrics in Prometheus format | Standardized instrumentation |
+| **TSDB** | Time-series database for storage | Optimized for time-based queries |
+| **PromQL** | Query language for metrics | Foundation for ML feature engineering |
+| **Rules** | Alert conditions and recording rules | Basis for intelligent alerting |
 
 ---
 
@@ -70,20 +103,35 @@ Grafana provides visualization and alerting.
 
 Jaeger helps trace requests through distributed systems.
 
+```mermaid
+sequenceDiagram
+    participant User
+    participant ServiceA as Service A<br/>(Frontend)
+    participant ServiceB as Service B<br/>(API)
+    participant ServiceC as Service C<br/>(Database)
+    participant Jaeger as Jaeger Collector
+    
+    User->>ServiceA: HTTP Request (TraceID: abc123)
+    activate ServiceA
+    ServiceA->>Jaeger: Send Span (Frontend)
+    ServiceA->>ServiceB: Call API (TraceID: abc123)
+    activate ServiceB
+    ServiceB->>Jaeger: Send Span (API)
+    ServiceB->>ServiceC: Query DB (TraceID: abc123)
+    activate ServiceC
+    ServiceC->>Jaeger: Send Span (Database)
+    ServiceC-->>ServiceB: Return Data
+    deactivate ServiceC
+    ServiceB-->>ServiceA: Return Response
+    deactivate ServiceB
+    ServiceA-->>User: HTTP Response
+    deactivate ServiceA
 ```
-Request → Service A → Service B → Service C
-              │            │           │
-              ▼            ▼           ▼
-        ┌─────────────────────────────────────┐
-        │           Jaeger Collector          │
-        │     (receives spans via gRPC)       │
-        └──────────────┬──────────────────────┘
-                       │
-        ┌──────────────▼──────────────────────┐
-        │           Jaeger Query              │
-        │        (UI and API)                 │
-        └─────────────────────────────────────┘
-```
+
+**How Jaeger Works:**
+1. Each service sends "spans" (units of work) to the Jaeger Collector
+2. All spans share the same Trace ID to form a complete request path
+3. The Jaeger UI allows you to visualize the entire trace tree
 
 ---
 
