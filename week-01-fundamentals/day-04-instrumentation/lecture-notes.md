@@ -1,17 +1,30 @@
-# Day 5-6: OpenTelemetry & Instrumentation
+# Day 4: OpenTelemetry & Application Instrumentation
 
-> **Duration:** 8 hours | **Difficulty:** Intermediate
+> **Duration:** 8 hours | **Difficulty:** Intermediate-Advanced
 
 ---
 
 ## 🎯 Learning Objectives
 
 By the end of this session, you will:
-1. Understand OpenTelemetry architecture and concepts
-2. Instrument a Python application with OTel
-3. Collect metrics, logs, and traces with a unified SDK
-4. Export telemetry to Prometheus and Jaeger
-5. Implement custom metrics and spans
+1. Master OpenTelemetry architecture and core concepts
+2. Instrument applications using auto and manual instrumentation
+3. Understand context propagation across services
+4. Export telemetry to multiple backends (Jaeger, Prometheus)
+5. Create custom metrics, spans, and events
+6. Implement distributed tracing best practices
+
+---
+
+## 📑 Preparation & Resources
+
+> [!TIP]
+> **Prerequisites:** Complete Day 3 stack deployment. Review [W3C Trace Context](https://www.w3.org/TR/trace-context/) specification basics.
+
+**Quick Links:**
+*   📂 [Resources & Best Practices](resources/RESOURCES.md)
+*   💻 [Exercise 1: Auto-Instrumentation](exercises/exercise-01-auto.md)
+*   📊 [Context Propagation Cheat Sheet](cheatsheet.md)
 
 ---
 
@@ -19,40 +32,81 @@ By the end of this session, you will:
 
 ### 1. What is OpenTelemetry?
 
-OpenTelemetry (OTel) is a vendor-neutral observability framework.
+OpenTelemetry (OTel) is a **vendor-neutral observability framework** that provides a single set of APIs, SDKs, and tools to collect telemetry data.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        Your Application                         │
-├─────────────────────────────────────────────────────────────────┤
-│                    OpenTelemetry SDK                            │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
-│  │   Traces    │  │   Metrics   │  │    Logs     │             │
-│  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘             │
-│         │                │                │                     │
-│         └────────────────┼────────────────┘                     │
-│                          │                                      │
-│                   ┌──────▼──────┐                               │
-│                   │  Exporters  │                               │
-│                   └──────┬──────┘                               │
-└──────────────────────────┼──────────────────────────────────────┘
-                           │
-          ┌────────────────┼────────────────┐
-          ▼                ▼                ▼
-    ┌──────────┐    ┌──────────┐    ┌──────────┐
-    │  Jaeger  │    │Prometheus│    │   Loki   │
-    └──────────┘    └──────────┘    └──────────┘
+```mermaid
+graph TB
+    subgraph "Your Application"
+    APP[Application Code]
+    end
+    
+    subgraph "OpenTelemetry SDK"
+    API["OTel API<br/>(Instrumentation Interface)"]
+    TRACES["Traces SDK<br/>Spans & Context"]
+    METRICS["Metrics SDK<br/>Counters & Histograms"]
+    LOGS["Logs SDK<br/>Structured Logging"]
+    end
+    
+    subgraph "Exporters"
+    OTLP[OTLP Exporter]
+    PROM[Prometheus Exporter]
+    JAEGER[Jaeger Exporter]
+    end
+    
+    subgraph "Backends"
+    J[Jaeger]
+    P[Prometheus]
+    L[Loki]
+    end
+    
+    APP --> API
+    API --> TRACES
+    API --> METRICS
+    API --> LOGS
+    
+    TRACES --> OTLP
+    METRICS --> PROM
+    LOGS --> OTLP
+    
+    OTLP --> J
+    PROM --> P
+    OTLP --> L
+    
+    style APP fill:#e1f5fe,stroke:#01579b
+    style API fill:#fff3e0,stroke:#e65100
+    style TRACES fill:#f1f8e9,stroke:#33691e
+    style METRICS fill:#fce4ec,stroke:#880e4f
+    style LOGS fill:#f3e5f5,stroke:#4a148c
 ```
 
 ### Key Concepts
 
-| Concept | Description |
-|---------|-------------|
-| **Trace** | End-to-end request journey |
-| **Span** | Single operation within a trace |
-| **Metric** | Numeric measurement over time |
-| **Context** | Propagation of trace information |
-| **Exporter** | Sends telemetry to backends |
+| Concept | Description | Why Important for AIOps |
+|---------|-------------|------------------------|
+| **Trace** | End-to-end request journey | Shows full causality chain for ML models |
+| **Span** | Single operation within a trace | Granular timing for bottleneck detection |
+| **Context** | Propagation of trace information | Correlates signals across services |
+| **Attributes** | Key-value metadata on spans | Feature engineering for anomaly detection |
+| **OTLP** | OpenTelemetry Protocol | Standard wire format for telemetry |
+
+### Auto vs Manual Instrumentation
+
+```mermaid
+graph LR
+    subgraph "Auto-Instrumentation"
+    AUTO["Zero-code changes<br/>Framework hooks<br/>Agent-based"]
+    end
+    
+    subgraph "Manual Instrumentation"
+    MANUAL["Custom spans<br/>Business metrics<br/>Fine-grained control"]
+    end
+    
+    AUTO -->|"Good for:"| USE1["Quick start<br/>Standard frameworks<br/>HTTP/DB calls"]
+    MANUAL -->|"Good for:"| USE2["Business logic<br/>Custom metrics<br/>Specific operations"]
+    
+    style AUTO fill:#c8e6c9,stroke:#388e3c
+    style MANUAL fill:#bbdefb,stroke:#1976d2
+```
 
 ---
 
