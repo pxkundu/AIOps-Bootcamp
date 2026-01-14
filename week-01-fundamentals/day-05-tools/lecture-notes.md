@@ -1,45 +1,96 @@
-# Day 7: Industry Tools Landscape
+# Day 5: Industry AIOps Tools & Selection Framework
 
-> **Duration:** 4 hours | **Difficulty:** Beginner
+> **Duration:** 6 hours | **Difficulty:** Intermediate
 
 ---
 
 ## 🎯 Learning Objectives
 
 By the end of this session, you will:
-1. Compare major observability and AIOps platforms
-2. Understand trade-offs between open-source and commercial solutions
-3. Identify which tools fit different use cases
-4. Create a decision framework for tool selection
+1. Compare major observability and AIOps platforms (commercial vs open-source)
+2. Understand TCO (Total Cost of Ownership) trade-offs
+3. Create a data-driven tool selection framework
+4. Evaluate vendor lock-in risks and mitigation strategies
+5. Navigate the procurement and evaluation process
+6. Identify emerging trends in the AIOps landscape
+
+---
+
+## 📑 Preparation & Resources
+
+> [!TIP]
+> **Prerequisites:** Complete Days 1-4 to understand what features to evaluate. Review your organization's budget and scale requirements.
+
+**Quick Links:**
+*   📂 [Resources & Vendor Guides](resources/RESOURCES.md)
+*   💻 [Exercise 1: Tool Evaluation](exercises/exercise-01-evaluation.md)
+*   📊 [Tool Selection Decision Tree](cheatsheet.md)
 
 ---
 
 ## 📖 Lecture Content
 
-### 1. Tool Categories
+### 1. The AIOps Tool Landscape
 
+The observability and AIOps market is complex and evolving rapidly. Here's how the ecosystem is structured:
+
+```mermaid
+graph TB
+    subgraph "Data Collection Layer"
+    OTEL[OpenTelemetry<br/>Universal Standard]
+    AGENT["Proprietary Agents<br/>(Datadog, New Relic)"]
+    EBPF["eBPF-based<br/>(Pixie, Cilium)"]
+    end
+    
+    subgraph "Storage & Processing"
+    TSDB["Time-Series DBs<br/>(Prometheus, M3)"]
+    LOGSTOR["Log Storage<br/>(Loki, Elasticsearch)"]
+    TRACE["Trace Storage<br/>(Jaeger, Tempo)"]
+    end
+    
+    subgraph "Analysis & AI"
+    ANOMALY["Anomaly Detection<br/>(Moogsoft, Anodot)"]
+    RCA["Root Cause Analysis<br/>(Dynatrace Davis)"]
+    ALERT["Alert Correlation<br/>(BigPanda)"]
+    end
+    
+    subgraph "Visualization & Action"
+    DASH["Dashboards<br/>(Grafana, Datadog)"]
+    INCIDENT["Incident Mgmt<br/>(PagerDuty, Opsgenie)"]
+    CHATOPS["ChatOps<br/>(Slack, Teams)"]
+    end
+    
+    OTEL --> TSDB
+    OTEL --> LOGSTOR
+    OTEL --> TRACE
+    AGENT --> TSDB
+    EBPF --> TSDB
+    
+    TSDB --> ANOMALY
+    LOGSTOR --> RCA
+    TRACE --> RCA
+    
+    ANOMALY --> ALERT
+    RCA --> ALERT
+    
+    ALERT --> DASH
+    DASH --> INCIDENT
+    INCIDENT --> CHATOPS
+    
+    style OTEL fill:#e1f5fe,stroke:#01579b
+    style ANOMALY fill:#fff3e0,stroke:#e65100
+    style DASH fill:#f1f8e9,stroke:#33691e
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                    AIOps Tool Landscape                         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  OBSERVABILITY          │  AIOPS PLATFORMS    │  INCIDENT MGMT  │
-│  ─────────────         │  ────────────────   │  ────────────── │
-│  • Datadog             │  • Dynatrace        │  • PagerDuty    │
-│  • New Relic           │  • Splunk           │  • Opsgenie     │
-│  • Splunk              │  • Moogsoft         │  • VictorOps    │
-│  • Elastic             │  • BigPanda         │  • Rootly       │
-│                        │  • ServiceNow       │                 │
-│  OPEN SOURCE           │                     │  CHATOPS        │
-│  ──────────           │                     │  ────────       │
-│  • Prometheus          │                     │  • Slack        │
-│  • Grafana             │                     │  • Microsoft    │
-│  • Jaeger              │                     │    Teams        │
-│  • OpenTelemetry       │                     │                 │
-│  • Loki                │                     │                 │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+
+### Tool Categories
+
+| Category | Purpose | Examples |
+|----------|---------|----------|
+| **All-in-One APM** | Metrics, logs, traces, APM in one platform | Datadog, New Relic, Dynatrace |
+| **Log Analytics** | Specialized log search and analysis | Splunk, Elastic, Loki |
+| **AIOps Platforms** | AI-driven event correlation and RCA | Moogsoft, BigPanda, ServiceNow |
+| **Incident Management** | On-call, escalation, postmortems | PagerDuty, Opsgenie, Incident.io |
+| **Open Source** | Self-hosted, customizable stack | Prometheus, Grafana, Jaeger, OpenTelemetry |
 
 ---
 
