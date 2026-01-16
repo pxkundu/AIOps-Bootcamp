@@ -1,0 +1,153 @@
+{
+    "questions": [
+        {
+            "id": "q001",
+            "mode": "knowledge_arena",
+            "category": "Day 1 - AIOps Fundamentals",
+            "difficulty": "⭐",
+            "type": "multiple_choice",
+            "points": 2,
+            "question": "Which pillar of observability provides the 'why' behind incidents?",
+            "options": {
+                "A": "Metrics - show aggregated numbers",
+                "B": "Logs - provide event narratives",
+                "C": "Traces - show request paths",
+                "D": "Dashboards - visualize data"
+            },
+            "correct_answer": "B",
+            "explanation": "Logs contain detailed event information and error messages that explain WHY something happened, while metrics show WHAT happened."
+        },
+        {
+            "id": "q002",
+            "mode": "knowledge_arena",
+            "category": "Day 2 - Cardinality",
+            "difficulty": "⭐⭐",
+            "type": "multiple_choice",
+            "points": 2,
+            "question": "Why should you NEVER use user_id as a Prometheus label?",
+            "options": {
+                "A": "It violates GDPR",
+                "B": "It creates high cardinality that crashes TSDB",
+                "C": "It's not supported by Prometheus",
+                "D": "It slows down queries slightly"
+            },
+            "correct_answer": "B",
+            "explanation": "High cardinality (millions of unique user IDs) creates millions of unique time series, exhausting memory and storage."
+        },
+        {
+            "id": "q003",
+            "mode": "knowledge_arena",
+            "category": "Day 3 - PromQL",
+            "difficulty": "⭐⭐",
+            "type": "multiple_choice",
+            "points": 2,
+            "question": "What does rate(http_requests_total[5m]) calculate?",
+            "options": {
+                "A": "Total requests in last 5 minutes",
+                "B": "Per-second average increase over 5 minutes",
+                "C": "Number of requests per 5-minute window",
+                "D": "Percentage increase over 5 minutes"
+            },
+            "correct_answer": "B",
+            "explanation": "rate() calculates the per-second average rate of increase over the specified time window."
+        },
+        {
+            "id": "q004",
+            "mode": "true_false",
+            "category": "Day 4 - OpenTelemetry",
+            "difficulty": "⭐",
+            "type": "true_false",
+            "points": 2,
+            "question": "OpenTelemetry can only export to one backend at a time.",
+            "correct_answer": "False",
+            "explanation": "You can configure multiple exporters simultaneously in OpenTelemetry."
+        },
+        {
+            "id": "q005",
+            "mode": "true_false",
+            "category": "Day 3 - Grafana",
+            "difficulty": "⭐",
+            "type": "true_false",
+            "points": 2,
+            "question": "Grafana can visualize data from Prometheus, Loki, and Jaeger.",
+            "correct_answer": "True",
+            "explanation": "Grafana supports multiple data sources including Prometheus (metrics), Loki (logs), and Jaeger (traces)."
+        },
+        {
+            "id": "q006",
+            "mode": "knowledge_arena",
+            "category": "Day 5 - Tool Selection",
+            "difficulty": "⭐⭐⭐",
+            "type": "multiple_choice",
+            "points": 2,
+            "question": "For a startup with 50 microservices and $10k/month budget, what's the MOST cost-effective approach?",
+            "options": {
+                "A": "Datadog Enterprise",
+                "B": "Dynatrace Full Platform",
+                "C": "Grafana Cloud + Prometheus",
+                "D": "Self-hosted everything"
+            },
+            "correct_answer": "C",
+            "explanation": "Grafana Cloud offers good balance of features and cost for this scale, while avoiding the operational overhead of fully self-hosted."
+        },
+        {
+            "id": "q007",
+            "mode": "knowledge_arena",
+            "category": "Day 4 - Context Propagation",
+            "difficulty": "⭐⭐⭐",
+            "type": "short_answer",
+            "points": 2,
+            "question": "What HTTP header is used for W3C Trace Context propagation?",
+            "acceptable_answers": [
+                "traceparent",
+                "trace-parent"
+            ],
+            "explanation": "The 'traceparent' header contains the trace-id, parent-id, and trace-flags."
+        },
+        {
+            "id": "q008",
+            "mode": "knowledge_arena",
+            "category": "Day 2 - Metrics Types",
+            "difficulty": "⭐⭐",
+            "type": "multiple_choice",
+            "points": 2,
+            "question": "Which metric type should you use for tracking active connections?",
+            "options": {
+                "A": "Counter - always increases",
+                "B": "Gauge - can go up and down",
+                "C": "Histogram - tracks distribution",
+                "D": "Summary - calculates quantiles"
+            },
+            "correct_answer": "B",
+            "explanation": "Gauge is for values that can increase or decrease, like active connections, temperature, or queue size."
+        },
+        {
+            "id": "q009",
+            "mode": "true_false",
+            "category": "Day 1 - AIOps",
+            "difficulty": "⭐",
+            "type": "true_false",
+            "points": 2,
+            "question": "Traditional threshold-based alerting is sufficient for modern distributed systems.",
+            "correct_answer": "False",
+            "explanation": "Modern systems need dynamic, ML-based anomaly detection because static thresholds don't scale to distributed architectures."
+        },
+        {
+            "id": "q010",
+            "mode": "knowledge_arena",
+            "category": "Day 3 - Alerting",
+            "difficulty": "⭐⭐",
+            "type": "multiple_choice",
+            "points": 2,
+            "question": "What does the 'for: 5m' clause do in a Prometheus alert rule?",
+            "options": {
+                "A": "Alert must be true for 5 minutes before firing",
+                "B": "Alert checks every 5 minutes",
+                "C": "Alert expires after 5 minutes",
+                "D": "Alert notification sent every 5 minutes"
+            },
+            "correct_answer": "A",
+            "explanation": "The 'for' clause prevents flapping by requiring the condition to be true for the specified duration before the alert fires."
+        }
+    ]
+}
