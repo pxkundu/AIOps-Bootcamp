@@ -1,0 +1,92 @@
+groups:
+  # Service-level aggregations
+  - name: service_aggregates
+    interval: 30s
+    rules:
+      # Request rate by service and status
+      - record: shopfast:service:requests:rate5m
+        expr: |
+          sum(rate(shopfast_api_requests_total[5m])) 
+          by (status, endpoint)
+      
+      # Error rate
+      - record: shopfast:service:errors:rate5m
+        expr: |
+          sum(rate(shopfast_api_requests_total{status=~"5.."}[5m])) 
+          by (endpoint)
+      
+      # Error percentage
+      - record: shopfast:service:error:percentage
+        expr: |
+          (shopfast:service:errors:rate5m 
+           / shopfast:service:requests:rate5m) * 100
+
+  # Latency aggregations
+  - name: latency_aggregates
+    interval: 1m
+    rules:
+      # P50 latency
+      - record: shopfast:api:latency:p50
+        expr: |
+          histogram_quantile(0.50,
+            sum(rate(shopfast_api_request_duration_seconds_bucket[5m])) 
+            by (endpoint, le))
+      
+      # P95 latency
+      - record: shopfast:api:latency:p95
+        expr: |
+          histogram_quantile(0.95,
+            sum(rate(shopfast_api_request_duration_seconds_bucket[5m])) 
+            by (endpoint, le))
+      
+      # P99 latency
+      - record: shopfast:api:latency:p99
+        expr: |
+          histogram_quantile(0.99,
+            sum(rate(shopfast_api_request_duration_seconds_bucket[5m])) 
+            by (endpoint, le))
+
+  # Business metrics
+  - name: business_metrics
+    interval: 1m
+    rules:
+      # Revenue rate by category
+      - record: shopfast:business:revenue:rate1h
+        expr: |
+          sum(rate(shopfast_order_value_total[1h])) 
+          by (product_category)
+      
+      # Total orders by status
+      - record: shopfast:business:orders:total
+        expr: |
+          sum(shopfast_orders_total) 
+          by (status, payment_method)
+      
+      # Conversion rate
+      - record: shopfast:business:conversion:rate
+        expr: |
+          sum(rate(shopfast_orders_total{status="completed"}[5m])) 
+          / 
+          sum(rate(shopfast_api_requests_total{endpoint="/checkout"}[5m]))
+      
+      # Cart abandonment rate
+      - record: shopfast:business:abandonment:rate
+        expr: |
+          sum(rate(shopfast_cart_abandonments_total[5m])) 
+          / 
+          sum(rate(shopfast_api_requests_total{endpoint="/cart"}[5m])) * 100
+
+  # System health metrics
+  - name: system_health
+    interval: 30s
+    rules:
+      # Average active connections
+      - record: shopfast:system:connections:avg
+        expr: avg(shopfast_api_active_connections)
+      
+      # Cache hit rate
+      - record: shopfast:system:cache:hit_rate
+        expr: |
+          sum(rate(shopfast_api_cache_hits_total[5m])) 
+          / 
+          sum(rate(shopfast_api_requests_total[5m])) * 100
