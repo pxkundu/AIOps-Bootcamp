@@ -21,7 +21,7 @@ By the end of this week, you will:
 |-----|-------|----------|
 | 1 | [Log Collection & Aggregation](day-01-logs/) | 8 hours |
 | 2 | [Storage, Indexing & Analytics](day-02-storage-analytics/) | 8 hours |
-| 3-4 | [Metrics Pipeline Design](day-02-metrics/) | 16 hours |
+| 3-4 | [Advanced Metrics & Exporters](day-03-04-metrics/) | 16 hours |
 | 5-6 | [Time-Series Databases](day-03-tsdb/) | 16 hours |
 | 7 | [Feature Engineering](day-04-features/) | 8 hours |
 
@@ -80,11 +80,14 @@ week-02-data-engineering/
 │   ├── exercises/
 │   ├── project/
 │   └── resources/
-├── day-02-metrics/
+├── day-03-04-metrics/
 │   ├── lecture-notes.md
+│   ├── cheatsheet.md
 │   ├── exercises/
+│   ├── project/
+│   ├── resources/
 │   └── solutions/
-├── day-03-tsdb/
+├── day-05-06-tsdb/
 │   ├── lecture-notes.md
 │   ├── exercises/
 │   └── solutions/
