@@ -19,10 +19,13 @@ By the end of this week, you will:
 
 | Day | Topic | Duration |
 |-----|-------|----------|
-| 1-2 | [ML Refresher: Supervised vs Unsupervised](day-01-ml-basics/) | 8 hours |
-| 3-4 | [Time-Series Analysis](day-02-timeseries/) | 8 hours |
-| 5-6 | [Classification for Operations](day-03-classification/) | 8 hours |
-| 7 | [Model Evaluation & MLOps](day-04-mlops/) | 4 hours |
+| 1 | [Statistical Foundations for AIOps](day-01-stats/) | 8 hours |
+| 2 | [Ops EDA & Preprocessing](day-02-eda/) | 8 hours |
+| 3 | [Supervised Learning: Predicting Impact](day-03-supervised/) | 8 hours |
+| 4 | [Unsupervised Learning: Pattern Discovery](day-04-unsupervised/) | 8 hours |
+| 5 | [NLP for Log Intelligence](day-05-nlp-logs/) | 8 hours |
+| 6 | [Time-Series Basics for Forecasting](day-06-timeseries-intro/) | 8 hours |
+| 7 | [MLOps & Model Evaluation in Ops](day-07-mlops-eval/) | 8 hours |
 
 ---
 
@@ -59,6 +62,29 @@ Data Collection → Preprocessing → Feature Engineering → Model Training →
 | Anomaly detection | Isolation Forest | Metric anomalies |
 | Forecasting | ARIMA, Prophet | Capacity planning |
 | Clustering | DBSCAN, K-Means | Log pattern mining |
+
+---
+
+## 📁 Folder Structure
+
+```
+week-03-ml-fundamentals/
+├── README.md
+├── THE-ORACLE-QUEST.md
+├── LAUNCH-QUEST.py
+├── day-01-stats/
+│   ├── lecture-notes.md
+│   ├── cheatsheet.md
+│   ├── exercises/
+│   ├── resources/
+│   └── project/
+├── day-02-eda/
+├── day-03-supervised/
+├── day-04-unsupervised/
+├── day-05-nlp-logs/
+├── day-06-timeseries-intro/
+└── day-07-mlops-eval/
+```
 
 ---
 
