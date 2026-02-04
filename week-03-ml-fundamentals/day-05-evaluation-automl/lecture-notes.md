@@ -149,13 +149,50 @@ shap.plots.waterfall(shap_values[0])  # Explain the first prediction
 
 ---
 
-## 📝 Summary Checklist for Production ML
+## 📉 Part 5: Model Monitoring in Production (The Hidden Debt)
+
+You deployed your model. It has 99% accuracy. **You are not done.**
+
+### 5.1 Concept Drift
+Data changes over time. An AIOps model trained on logs from 2023 might fail in 2024 because of:
+- **New software versions** (different log formats)
+- **User behavior changes** (traffic spikes)
+- **Infrastructure updates** (moving to K8s)
+
+```mermaid
+graph LR
+    A[Training Data<br/>(Jan-Mar)] --> B[Model]
+    B --> C[Good Predictions]
+    D[Live Data<br/>(Aug-Sep)] --> B
+    D --> E[Drifted Distribution!]
+    E --> F[Bad Predictions]
+    
+    style A fill:#e1f5ff
+    style D fill:#ffe1e1
+    style F fill:#ffcccc
+```
+
+### 5.2 Drift Detection Methods
+1.  **PSI (Population Stability Index):** Measures how much a variable's distribution has shifted.
+2.  **KS Test (Kolmogorov-Smirnov):** Statistical test to check if two samples come from the same distribution.
+3.  **Adversarial Validation:** Train a classifier to distinguish "Train" data from "Live" data. If it can easily tell them apart (AUC > 0.7), you have drift.
+
+### 5.3 Retraining Strategies
+- **Fixed Interval:** Retrain every Sunday.
+- **Trigger-Based:** Retrain when F1-score drops below 0.8.
+- **Online Learning:** Update weights with every new batch (risky but fast).
+
+---
+
+## 📝 Part 6: Summary Checklist for Production ML
 
 1. **Evaluation:** Use Stratified CV or TimeSeriesSplit to avoid lying to yourself.
 2. **Imbalance:** Always check F1-score/Recall, never Accuracy.
 3. **Tuning:** Start with defaults -> Random Search -> Optuna (if needed).
 4. **AutoML:** Use it to find a strong baseline or challenger model.
 5. **Why?:** Always run SHAP on your final model to ensure it learned physics, not noise.
+6. **Monitoring:** Set up drift alerts immediately after deployment.
+
 
 ---
 
