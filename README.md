@@ -18,10 +18,10 @@ Build production-ready skills in:
 | 1 | **Observability Fundamentals** | Prometheus, Grafana, OpenTelemetry |
 | 2 | **Data Engineering for AIOps** | Log pipelines, metrics, feature engineering |
 | 3 | **ML for Operations** | scikit-learn, time-series, MLflow |
-| 4 | **Anomaly Detection** | Statistical & ML-based detection, log analytics |
-| 5 | **Predictive Analytics** | Forecasting, failure prediction, deep learning |
+| 4 | **Anomaly Detection/Forecasting** | ARIMA, Isolation Forest, LSTM |
+| 5 | **Auto-Remediation** | Runbooks, Event Driven Automation, Kubernetes |
 | 6 | **Intelligent Alerting** | Alert correlation, RCA, dynamic thresholds |
-| 7 | **Auto-Remediation** | Runbooks, LLM integration, ChatOps |
+| 7 | **Generative AI for AIOps (New!)** | RAG for Runbooks, LLM agents |
 | 8 | **Capstone Project** | End-to-end AIOps platform + career prep |
 
 ---
@@ -60,10 +60,10 @@ cat README.md
 ├── week-01-fundamentals/      # AIOps & Observability basics
 ├── week-02-data-engineering/  # Logs, metrics, feature engineering
 ├── week-03-ml-fundamentals/   # ML basics for operations
-├── week-04-anomaly-detection/ # Detecting anomalies in systems
-├── week-05-predictive/        # Forecasting & prediction
-├── week-06-alerting/          # Intelligent alerting systems
-├── week-07-remediation/       # Auto-remediation & ChatOps
+├── week-04-anomaly-detection/ # Detection & Forecasting (ARIMA/LSTM)
+├── week-05-remediation/       # Auto-remediation & Self-Healing
+├── week-06-alerting/          # Intelligent alerting & Correlation
+├── week-07-llm-agents/        # GenAI for AIOps (New!)
 ├── week-08-capstone/          # Final project & career prep
 ├── resources/                 # Cheatsheets, interview prep
 ├── infrastructure/            # Docker, K8s, Terraform configs
