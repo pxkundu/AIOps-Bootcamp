@@ -59,7 +59,22 @@ Instead of telling you "The Web App is slow" (a symptom), Davis tells you "The W
 
 ---
 
-## 🛡️ 5. Comparison: Datadog vs. Dynatrace
+## 📊 5. Step 4: Deploying the Serverless Triage Dashboard (DQL)
+
+For modern AWS Serverless stacks, we use **DQL (Dynatrace Query Language)** to correlate cross-account Lambda and API Gateway health.
+
+1.  Run the **Dashboard Builder**:
+    ```bash
+    python project/src/dashboard_dql.py
+    ```
+2.  **What is being created?**
+    - **Tile 1:** Lambda Invocations vs. Errors per function.
+    - **Tile 2:** P95 Latency hotspots in API Gateway.
+    - **Tile 3:** Failure heatmap for serverless entities using **Grail** data.
+
+---
+
+## 🛡️ 6. Comparison: Datadog vs. Dynatrace
 
 | Feature | Datadog (Day 1) | Dynatrace (Day 2) |
 |---|---|---|

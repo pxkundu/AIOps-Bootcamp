@@ -17,6 +17,17 @@ Today, we use Dynatrace's **Deterministic AI (Davis)**. Davis doesn't just look 
 2.  **Davis AI:** The causal engine that analyzes billions of dependencies to pinpoint the single root cause among thousands of symptoms.
 3.  **OneAgent:** A single binary that auto-instruments everything on a host without code changes.
 
+### 3. DQL (Dynatrace Query Language) for Serverless
+With the move to the **Grail** data lake, Dynatrace uses DQL to query metrics, logs, and traces in a unified way. For a "Simple Serverless" architecture on AWS, DQL allows us to correlate across Lambda and API Gateway instantly.
+
+#### Common DQL Snippets for Serverless:
+- **Lambda Failure Rate:**
+  `fetch metrics | filter metric.key == "aws.lambda.errors" | summarize errs = sum(value), by:{dt.entity.aws_lambda_function}`
+- **API Gateway Cold Starts / Latency:**
+  `fetch metrics | filter metric.key == "aws.apigateway.latency" | summarize p99 = percentile(value, 99)`
+- **Cross-Service Error Correlation:**
+  `fetch events | filter event.type == "ERROR_EVENT" | summarize count = count(), by:{dt.entity.aws_lambda_function, dt.entity.aws_api_gateway}`
+
 ---
 
 ## 🏗️ 2. Project Architecture: The Root Cause Detective
