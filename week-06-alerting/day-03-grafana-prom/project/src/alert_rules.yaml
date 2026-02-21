@@ -1,0 +1,50 @@
+# Prometheus Alert Rules: The Self-Adjusting Sentinel
+# These rules use statistical anomaly detection rather than fixed numbers.
+
+groups:
+- name: AIOpsDynamicAlerts
+  rules:
+
+  # 1. LATENCY ANOMALY DETECTION (Z-Score > 3)
+  # Alerts if the current request latency is significantly different from its 1-hour history.
+  - alert: HighLatencyAnomaly
+    expr: |
+      abs(
+        rate(http_request_duration_seconds_sum[5m]) / rate(http_request_duration_seconds_count[5m])
+        - 
+        avg_over_time((rate(http_request_duration_seconds_sum[1h]) / rate(http_request_duration_seconds_count[1h]))[1h:5m])
+      )
+      > 
+      3 * stddev_over_time((rate(http_request_duration_seconds_sum[1h]) / rate(http_request_duration_seconds_count[1h]))[1h:5m])
+    for: 2m
+    labels:
+      severity: critical
+      team: observability
+    annotations:
+      summary: "Latency Anomaly detected on {{ $labels.instance }}"
+      description: "Current latency is {{ $value | printf \"%.2f\" }} standard deviations away from the 1-hour mean. This indicates a non-seasonal performance degradation."
+
+  # 2. TRAFFIC OUTLIER (Lower Bound)
+  # Detects if traffic drops unexpectedly (e.g., frontend bug preventing requests).
+  - alert: SuddenTrafficDrop
+    expr: |
+      rate(http_requests_total[5m])
+      <
+      avg_over_time(rate(http_requests_total[24h])[24h:5m]) - 2 * stddev_over_time(rate(http_requests_total[24h])[24h:5m])
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Unexpected drop in traffic"
+      description: "Traffic has dropped below the lower statistical bound (Mean - 2*StdDev) based on 24h history."
+
+  # 3. DISK SPACE FORECASTING (Linear Prediction)
+  # Alerts if we are predicted to run out of space in 4 hours based on the current consumption rate over the last hour.
+  - alert: DiskFullPrediction
+    expr: predict_linear(node_filesystem_free_bytes[1h], 4 * 3600) < 0
+    for: 10m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Disk predicted full in < 4 hours"
+      description: "Based on the last hour's burn rate, the filesystem {{ $labels.mountpoint }} will reach 0 bytes within 4 hours."
