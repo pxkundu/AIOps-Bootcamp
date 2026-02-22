@@ -77,8 +77,6 @@ It learns that `CPU=50` is rare when `Hour=3`.
 
 ---
 
-## 🔗 Next Steps
-
-1.  Open the [Cheat Sheet](cheatsheet.md) for code.
-2.  Catch the Spy in [Exercise 01](exercises/exercise-01-isolation-forest.md).
-3.  Deploy the [Network Guardian Project](project/README.md).
+<p align="center">
+  <a href="../day-02-forecasting/lecture-notes.md">⬅️ Back: Day 2</a> | <strong>Day 3: Anomaly Algorithms</strong> | <a href="../day-04-deep-learning/lecture-notes.md">Next: Day 4 ➡️</a>
+</p>

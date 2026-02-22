@@ -65,5 +65,5 @@ Raw Logs → Parsing (Drain3) → Clustering → Pattern Mining → Anomaly Dete
 ---
 
 <p align="center">
-  <a href="../week-03-ml-fundamentals/">← Week 3</a> | <a href="day-01-statistical/">Start Week 4 →</a> | <a href="../week-05-predictive/">Week 5 →</a>
+  <a href="../week-03-ml-fundamentals/day-05-evaluation-automl/lecture-notes.md">⬅️ Back: Week 3</a> | <strong>Week 4 Overview</strong> | <a href="day-01-statistical/lecture-notes.md">Start Day 1 ➡️</a>
 </p>

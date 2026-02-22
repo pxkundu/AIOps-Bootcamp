@@ -90,6 +90,8 @@ Did the new version of the app *really* increase latency, or is it just random n
 
 ---
 
+---
+
 <p align="center">
-  <a href="../THE-ORACLE-QUEST.md">← The Oracle's Quest</a> | <a href="cheatsheet.md">Go to Cheat Sheet →</a>
+  <a href="../README.md">⬅️ Back: Week 3 Overview</a> | <strong>Day 1: ML Stats</strong> | <a href="../day-02-eda/lecture-notes.md">Next: Day 2 ➡️</a>
 </p>

@@ -85,8 +85,6 @@ Do not enter an infinite loop of death.
 
 ---
 
-## 🔗 Next Steps
-
-1.  Open the [Cheat Sheet](cheatsheet.md) for remediation snippets.
-2.  Practice process killing in [Exercise 01](exercises/exercise-01-scripting.md).
-3.  Build "The Auto-Restarter" in the [Project](project/README.md).
+<p align="center">
+  <a href="../README.md">⬅️ Back: Week 5 Overview</a> | <strong>Day 1: Rule-Based Remediation</strong> | <a href="../day-02-context/lecture-notes.md">Next: Day 2 ➡️</a>
+</p>

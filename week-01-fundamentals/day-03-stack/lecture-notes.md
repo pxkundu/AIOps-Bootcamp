@@ -319,5 +319,5 @@ Complete these exercises:
 ---
 
 <p align="center">
-  <a href="../day-01-intro/">← Day 1</a> | <a href="../day-03-instrumentation/">Day 5-6: Instrumentation →</a>
+  <a href="../day-02-pillars/lecture-notes.md">⬅️ Back: Day 2</a> | <strong>Day 3: Observability Stack</strong> | <a href="../day-04-instrumentation/lecture-notes.md">Next: Day 4 ➡️</a>
 </p>

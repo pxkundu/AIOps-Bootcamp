@@ -90,9 +90,6 @@ graph TD
 
 ---
 
-## 🔗 Next Steps
-
-1.  Open the [Cheat Sheet](cheatsheet.md) for Keras code.
-2.  Predict a sine wave in [Exercise 01](exercises/exercise-01-lstm-forecast.md).
-3.  Build a "Mirror" in [Exercise 02](exercises/exercise-02-autoencoder.md).
-4.  Deploy the "Predictive Maintenance System" in [Project](project/README.md).
+<p align="center">
+  <a href="../day-03-algorithms/lecture-notes.md">⬅️ Back: Day 3</a> | <strong>Day 4: Deep Learning</strong> | <a href="../day-05-capstone/lecture-notes.md">Next: Day 5 ➡️</a>
+</p>

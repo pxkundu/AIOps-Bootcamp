@@ -111,5 +111,5 @@ cd week-02-data-engineering
 ---
 
 <p align="center">
-  <a href="../week-01-fundamentals/">← Week 1</a> | <a href="day-01-logs/">Start Week 2 →</a> | <a href="../week-03-ml-fundamentals/">Week 3 →</a>
+  <a href="../week-01-fundamentals/day-05-tools/lecture-notes.md">⬅️ Back: Week 1</a> | <strong>Week 2 Overview</strong> | <a href="day-01-logs/lecture-notes.md">Start Week 2 ➡️</a>
 </p>

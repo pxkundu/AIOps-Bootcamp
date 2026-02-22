@@ -109,7 +109,6 @@ Detailed in the Cheatsheet, but usually: **Differencing** ($\Delta Y = Y_t - Y_{
 
 ---
 
-## 🔗 Next Steps
-1. Open the [Cheat Sheet](cheatsheet.md) for code snippets.
-2. Start [Exercise 01](exercises/exercise-01-pandas-time.md) to practice Resampling.
-3. Diagnose a server in [Project: The Capacity Planner](project/README.md).
+<p align="center">
+  <a href="../README.md">⬅️ Back: Week 4 Overview</a> | <strong>Day 1: Time Series</strong> | <a href="../day-02-forecasting/lecture-notes.md">Next: Day 2 ➡️</a>
+</p>

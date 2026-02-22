@@ -77,8 +77,6 @@ The definition of "Normal" changes.
 
 ---
 
-## 🔗 Next Steps
-
-1.  **Design:** Plan your `Panopticon` class in the [Project](project/README.md).
-2.  **Build:** Implement the detectors.
-3.  **Deploy:** Run the simulation `war_room.py` and defend the system.
+<p align="center">
+  <a href="../day-04-deep-learning/lecture-notes.md">⬅️ Back: Day 4</a> | <strong>Day 5: Capstone Project</strong> | <a href="../../week-05-remediation/README.md">Begin Week 5 ➡️</a>
+</p>

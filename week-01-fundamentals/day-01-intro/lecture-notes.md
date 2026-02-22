@@ -215,5 +215,5 @@ Complete the exercises in the [exercises/](exercises/) folder:
 ---
 
 <p align="center">
-  <a href="exercises/">Start Exercises</a> | <a href="../day-02-observability/">Next: Observability Stack →</a>
+  <a href="../README.md">⬅️ Back: Week 1 Overview</a> | <strong>Day 1: AIOps Intro</strong> | <a href="../day-02-pillars/lecture-notes.md">Next: Day 2 ➡️</a>
 </p>

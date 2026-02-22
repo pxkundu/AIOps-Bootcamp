@@ -120,6 +120,8 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 
 ---
 
+---
+
 <p align="center">
-  <strong>Ready to start?</strong> → <a href="week-01-fundamentals/README.md">Begin Week 1</a>
+  <strong>Ready to start?</strong> → <a href="BACKGROUND.md">Read Background</a> | <a href="PREREQUISITES.md">Check Prerequisites</a> | <a href="week-01-fundamentals/README.md">Begin Week 1</a>
 </p>

@@ -59,8 +59,6 @@ By using `tags` (e.g., `service:checkout`, `env:prod`), Datadog's correlation en
 
 ---
 
-## 📝 4. Setup Checklist
-- [ ] Datadog API Key & Application Key generated.
-- [ ] AWS Account linked via Integration Page.
-- [ ] Python `datadog-api-client` installed.
-- [ ] `dd-agent` running on at least one AWS instance/container.
+<p align="center">
+  <a href="../README.md">⬅️ Back: Week 6 Overview</a> | <strong>Day 1: Datadog Alerting</strong> | <a href="../day-02-dynatrace/lecture-notes.md">Next: Day 2 ➡️</a>
+</p>

@@ -65,6 +65,8 @@ Level 3: Auto → Bot executes autonomously (safe ops)
 
 ---
 
+---
+
 <p align="center">
-  <a href="../week-06-alerting/">← Week 6</a> | <a href="day-01-runbooks/">Start Week 7 →</a> | <a href="../week-08-capstone/">Week 8 →</a>
+  <a href="../week-06-alerting/day-03-grafana-prom/lecture-notes.md">⬅️ Back: Week 6</a> | <strong>Week 7 Overview</strong> | <a href="../week-08-capstone/README.md">Begin Week 8 ➡️</a>
 </p>

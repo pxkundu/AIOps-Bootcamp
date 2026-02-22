@@ -181,5 +181,5 @@ If you need to brush up on prerequisites, we recommend:
 ---
 
 <p align="center">
-  <strong>Ready?</strong> → <a href="week-01-fundamentals/README.md">Start Week 1</a>
+  <a href="BACKGROUND.md">⬅️ Back: Background</a> | <a href="README.md">Home</a> | <a href="week-01-fundamentals/README.md">Next: Week 1 ➡️</a>
 </p>

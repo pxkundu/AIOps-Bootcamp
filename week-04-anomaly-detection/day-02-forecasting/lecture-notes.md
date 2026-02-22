@@ -88,8 +88,6 @@ How do you know if your "Oracle" is lying?
 
 ---
 
-## 🔗 Next Steps
-
-1.  Open the [Cheat Sheet](cheatsheet.md) for code.
-2.  Complete [Exercise 01: Tuning ARIMA](exercises/exercise-01-tuning.md).
-3.  Build the [Budget Forecaster](project/README.md).
+<p align="center">
+  <a href="../day-01-time-series/lecture-notes.md">⬅️ Back: Day 1</a> | <strong>Day 2: Ops Forecasting</strong> | <a href="../day-03-algorithms/lecture-notes.md">Next: Day 3 ➡️</a>
+</p>

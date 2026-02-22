@@ -377,5 +377,5 @@ done
 ---
 
 <p align="center">
-  <a href="../day-02-observability/">← Day 3-4</a> | <a href="../day-04-tools/">Day 7: Tools Landscape →</a>
+  <a href="../day-03-stack/lecture-notes.md">⬅️ Back: Day 3</a> | <strong>Day 4: Instrumentation</strong> | <a href="../day-05-tools/lecture-notes.md">Next: Day 5 ➡️</a>
 </p>

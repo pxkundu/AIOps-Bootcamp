@@ -110,5 +110,5 @@ In Week 4, we will use these metrics as ML features. For successful ML, your met
 ---
 
 <p align="center">
-  <a href="../day-03-metrics/">← Day 3: Metric Pipelines</a> | <a href="cheatsheet.md">Go to Cheat Sheet →</a>
+  <a href="../day-03-metrics/lecture-notes.md">⬅️ Back: Day 3</a> | <strong>Day 4: Custom Exporters</strong> | <a href="../day-05-06-tsdb/lecture-notes.md">Next: Day 5-6 ➡️</a>
 </p>

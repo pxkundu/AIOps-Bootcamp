@@ -571,9 +571,6 @@ y_pred_unlabeled = model.predict(X_unlabeled)
 
 ---
 
-## 📚 Further Reading
-
-- [Scikit-learn Clustering Guide](https://scikit-learn.org/stable/modules/clustering.html)
-- [Anomaly Detection with Isolation Forest](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf)
-- [t-SNE Explained](https://distill.pub/2016/misread-tsne/)
-- [PCA Step-by-Step](https://builtin.com/data-science/step-step-explanation-principal-component-analysis)
+<p align="center">
+  <a href="../day-03-supervised/lecture-notes.md">⬅️ Back: Day 3</a> | <strong>Day 4: Unsupervised Learning</strong> | <a href="../day-05-evaluation-automl/lecture-notes.md">Next: Day 5 ➡️</a>
+</p>

@@ -98,6 +98,8 @@ graph TD
 
 ---
 
+---
+
 <p align="center">
-  <a href="../THE-ORACLE-QUEST.md">← The Oracle's Quest</a> | <a href="cheatsheet.md">Go to Cheat Sheet →</a>
+  <a href="../day-01-stats/lecture-notes.md">⬅️ Back: Day 1</a> | <strong>Day 2: Ops EDA</strong> | <a href="../day-03-supervised/lecture-notes.md">Next: Day 3 ➡️</a>
 </p>

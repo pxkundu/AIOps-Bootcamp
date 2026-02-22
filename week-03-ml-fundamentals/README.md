@@ -89,5 +89,5 @@ week-03-ml-fundamentals/
 ---
 
 <p align="center">
-  <a href="../week-02-data-engineering/">← Week 2</a> | <a href="day-01-ml-basics/">Start Week 3 →</a> | <a href="../week-04-anomaly-detection/">Week 4 →</a>
+  <a href="../week-02-data-engineering/day-05-06-tsdb/lecture-notes.md">⬅️ Back: Week 2</a> | <strong>Week 3 Overview</strong> | <a href="day-01-stats/lecture-notes.md">Start Week 3 ➡️</a>
 </p>

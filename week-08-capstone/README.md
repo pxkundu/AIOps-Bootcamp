@@ -107,6 +107,8 @@ To receive your certificate:
 
 ---
 
+---
+
 <p align="center">
-  <a href="../week-07-remediation/">← Week 7</a> | <a href="capstone/">Start Capstone →</a>
+  <a href="../week-07-remediation/README.md">⬅️ Back: Week 7</a> | <strong>Week 8: Capstone</strong> | <a href="../README.md">Finish Bootcamp 🏁</a>
 </p>

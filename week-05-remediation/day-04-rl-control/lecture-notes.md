@@ -66,8 +66,6 @@ Equation: $Q_{new} = Q_{old} + \alpha \times (Reward + \gamma \times MaxQ_{next}
 
 ---
 
-## 🔗 Next Steps
-
-1.  Copy the Q-Learning snippet from [Cheat Sheet](cheatsheet.md).
-2.  Manually balance the load in [Exercise 01](exercises/exercise-01-manual-control.md).
-3.  Let the AI learn in [Project](project/README.md).
+<p align="center">
+  <a href="../day-03-event-driven/lecture-notes.md">⬅️ Back: Day 3</a> | <strong>Day 4: RL Control</strong> | <a href="../day-05-capstone/lecture-notes.md">Next: Day 5 ➡️</a>
+</p>

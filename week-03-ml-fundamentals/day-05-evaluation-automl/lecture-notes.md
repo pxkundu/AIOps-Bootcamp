@@ -196,8 +196,6 @@ graph LR
 
 ---
 
-## 🔗 Next Steps
-
-- **Hands-on:** [Exercise 01: Tuning & SHAP](exercises/exercise-01-evaluation.md)
-- **Project:** [The AutoML Challenge](project/README.md)
-- **Weekend:** Rest! You've completed the ML Fundamentals week! 
+<p align="center">
+  <a href="../day-04-unsupervised/lecture-notes.md">⬅️ Back: Day 4</a> | <strong>Day 5: Evaluation & AutoML</strong> | <a href="../../week-04-anomaly-detection/README.md">Begin Week 4 ➡️</a>
+</p>

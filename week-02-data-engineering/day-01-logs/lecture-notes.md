@@ -147,6 +147,8 @@ Imagine a "Log Storm" where your app starts emitting 100x more logs due to an er
 
 ---
 
+---
+
 <p align="center">
-  <a href="../../">← Back to Week 2</a> | <a href="cheatsheet.md">Go to Cheat Sheet →</a>
+  <a href="../README.md">⬅️ Back: Week 2 Overview</a> | <strong>Day 1: Logs</strong> | <a href="../day-02-storage-analytics/lecture-notes.md">Next: Day 2 ➡️</a>
 </p>

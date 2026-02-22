@@ -124,5 +124,5 @@ A customer reports that their checkout is slow once every 10 attempts.
 ---
 
 <p align="center">
-  <a href="../day-01-intro/">← Day 1: Intro</a> | <a href="../day-03-stack/">Day 3: Hands-on Stack →</a>
+  <a href="../day-01-intro/lecture-notes.md">⬅️ Back: Day 1</a> | <strong>Day 2: Three Pillars</strong> | <a href="../day-03-stack/lecture-notes.md">Next: Day 3 ➡️</a>
 </p>

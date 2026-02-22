@@ -72,9 +72,6 @@ Standard JSON structure:
 
 ---
 
-## 🔗 Next Steps
-
-1.  Open [Cheat Sheet](cheatsheet.md) for Flask Webhook code.
-2.  See the speed difference in [Exercise 01](exercises/exercise-01-polling-vs-webhook.md).
-3.  Build a Mock Lambda in [Exercise 02](exercises/exercise-02-flask-receiver.md).
-4.  Build "The Reactor" in [Project](project/README.md).
+<p align="center">
+  <a href="../day-02-context/lecture-notes.md">⬅️ Back: Day 2</a> | <strong>Day 3: Event-Driven Workflows</strong> | <a href="../day-04-rl-control/lecture-notes.md">Next: Day 4 ➡️</a>
+</p>

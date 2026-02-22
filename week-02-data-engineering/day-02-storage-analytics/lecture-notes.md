@@ -124,5 +124,5 @@ Logs are often high-cardinality "text features."
 ---
 
 <p align="center">
-  <a href="../day-01-logs/">← Day 1: Collection</a> | <a href="cheatsheet.md">Go to Cheat Sheet →</a>
+  <a href="../day-01-logs/lecture-notes.md">⬅️ Back: Day 1</a> | <strong>Day 2: Storage & Analytics</strong> | <a href="../day-03-metrics/lecture-notes.md">Next: Day 3 ➡️</a>
 </p>

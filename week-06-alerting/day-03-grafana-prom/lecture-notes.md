@@ -60,8 +60,6 @@ We will build a dashboard that shows the "Confidence Bands" (Upper and Lower bou
 
 ---
 
-## 📝 4. Setup Checklist
-- [ ] Minikube or cloud K8s cluster access.
-- [ ] Helm installed.
-- [ ] Basic knowledge of PromQL vectors.
-- [ ] Prometheus & Grafana instance running.
+<p align="center">
+  <a href="../day-02-dynatrace/lecture-notes.md">⬅️ Back: Day 2</a> | <strong>Day 3: Grafana & Prometheus</strong> | <a href="../../week-07-remediation/README.md">Begin Week 7 ➡️</a>
+</p>

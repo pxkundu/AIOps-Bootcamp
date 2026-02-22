@@ -126,5 +126,5 @@ In AIOps, we often build platforms for "Internal Customers."
 ---
 
 <p align="center">
-  <a href="../day-03-04-metrics/">← Day 3-4: Metrics</a> | <a href="cheatsheet.md">Go to Cheat Sheet →</a>
+  <a href="../day-03-04-metrics/lecture-notes.md">⬅️ Back: Day 4</a> | <strong>Day 5-6: TSDB</strong> | <a href="../../week-03-ml-fundamentals/README.md">Begin Week 3 ➡️</a>
 </p>

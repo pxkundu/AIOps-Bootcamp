@@ -91,5 +91,5 @@ week-01-fundamentals/
 ---
 
 <p align="center">
-  <strong>Ready?</strong> → <a href="day-01-intro/lecture-notes.md">Start Day 1</a>
+  <a href="../PREREQUISITES.md">⬅️ Back: Prerequisites</a> | <strong>Week 1 Overview</strong> | <a href="day-01-intro/lecture-notes.md">Start Day 1 ➡️</a>
 </p>

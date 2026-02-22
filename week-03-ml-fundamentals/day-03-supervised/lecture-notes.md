@@ -438,9 +438,6 @@ shap.force_plot(explainer.expected_value[1], shap_values[1], X_test.iloc[0])
 
 ---
 
-## 📚 Further Reading
-
-- [Scikit-learn Classification Guide](https://scikit-learn.org/stable/supervised_learning.html)
-- [Handling Imbalanced Data](https://imbalanced-learn.org/)
-- [XGBoost Documentation](https://xgboost.readthedocs.io/)
-- [Google's Rules of ML](https://developers.google.com/machine-learning/guides/rules-of-ml)
+<p align="center">
+  <a href="../day-02-eda/lecture-notes.md">⬅️ Back: Day 2</a> | <strong>Day 3: Supervised Learning</strong> | <a href="../day-04-unsupervised/lecture-notes.md">Next: Day 4 ➡️</a>
+</p>

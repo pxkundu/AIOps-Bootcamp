@@ -118,4 +118,8 @@ The choice is simple. You can continue chasing alerts and fighting fires, or you
 
 **The future of operations is AI-driven. Don't get left behind.**
 
-[👉 Start your journey with Week 1 Foundation](week-01-fundamentals/README.md)
+---
+
+<p align="center">
+  <a href="README.md">⬅️ Back to Home</a> | <a href="PREREQUISITES.md">Next: Prerequisites ➡️</a>
+</p>

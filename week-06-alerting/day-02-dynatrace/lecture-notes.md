@@ -68,8 +68,6 @@ We will simulate a "Cascading Failure" (Service A calls Service B which fails). 
 
 ---
 
-## 📝 4. Setup Checklist
-- [ ] Dynatrace Trial/Environment active.
-- [ ] Azure Subscription with an App Service or VM.
-- [ ] API v2 Token with `entities.read` and `problems.read` permissions.
-- [ ] Python `requests` library installed.
+<p align="center">
+  <a href="../day-01-datadog/lecture-notes.md">⬅️ Back: Day 1</a> | <strong>Day 2: Dynatrace Davis AI</strong> | <a href="../day-03-grafana-prom/lecture-notes.md">Next: Day 3 ➡️</a>
+</p>

@@ -256,5 +256,5 @@ Estimate monthly costs for:
 ---
 
 <p align="center">
-  <a href="../day-03-instrumentation/">← Day 5-6</a> | <a href="../project/">Week 1 Project →</a>
+  <a href="../day-04-instrumentation/lecture-notes.md">⬅️ Back: Day 4</a> | <strong>Day 5: Tools Landscape</strong> | <a href="../../week-02-data-engineering/README.md">Begin Week 2 ➡️</a>
 </p>

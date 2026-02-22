@@ -61,4 +61,8 @@ Today you will build **System Aegis**. You will be given a simulator that random
 
 Your Aegis system must detect, triage, and heal these incidents autonomously while maintaining a 99.9% uptime and staying within budget.
 
-**Victory Condition:** Run for 10 minutes without "Human Intervention" (manual restarts) while handling at least 20 random failures.
+---
+
+<p align="center">
+  <a href="../day-04-rl-control/lecture-notes.md">⬅️ Back: Day 4</a> | <strong>Day 5: Capstone Project</strong> | <a href="../../week-06-alerting/README.md">Begin Week 6 ➡️</a>
+</p>

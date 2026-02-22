@@ -96,9 +96,6 @@ action = clf.predict([[96, 3, 110]])
 
 ---
 
-## 🔗 Next Steps
-
-1.  Open the [Cheat Sheet](cheatsheet.md) for Decision Tree code.
-2.  Build a manual tree in [Exercise 01](exercises/exercise-01-manual-tree.md).
-3.  Train an ML tree in [Exercise 02](exercises/exercise-02-sklearn-tree.md).
-4.  Build "The Smart Doctor" in the [Project](project/README.md).
+<p align="center">
+  <a href="../day-01-rule-based/lecture-notes.md">⬅️ Back: Day 1</a> | <strong>Day 2: Context-Aware Recovery</strong> | <a href="../day-03-event-driven/lecture-notes.md">Next: Day 3 ➡️</a>
+</p>

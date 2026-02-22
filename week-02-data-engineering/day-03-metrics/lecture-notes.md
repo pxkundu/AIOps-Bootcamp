@@ -388,5 +388,5 @@ scrape_configs:
 ---
 
 <p align="center">
-  <a href="../day-02-storage-analytics/">← Day 2: Storage</a> | <a href="cheatsheet.md">Go to Cheat Sheet →</a>
+  <a href="../day-02-storage-analytics/lecture-notes.md">⬅️ Back: Day 2</a> | <strong>Day 3: Metric Pipelines</strong> | <a href="../day-03-04-metrics/lecture-notes.md">Next: Day 4 ➡️</a>
 </p>
