@@ -19,10 +19,13 @@ By the end of this week, you will:
 
 | Day | Topic | Duration |
 |-----|-------|----------|
-| 1-2 | [Alert Correlation & Deduplication](day-01-correlation/) | 8 hours |
-| 3-4 | [Root Cause Analysis](day-02-rca/) | 8 hours |
-| 5-6 | [Dynamic Thresholding](day-03-thresholds/) | 8 hours |
-| 7 | [Alert Prioritization](day-04-prioritization/) | 4 hours |
+| 1 | [Datadog Alerting & Correlation](day-01-datadog/) | 8 hours |
+| 2 | [Dynatrace Davis AI & RCA](day-02-dynatrace/) | 8 hours |
+| 3 | [Grafana & Prometheus Thresholds](day-03-grafana-prom/) | 8 hours |
+| 4 | [Topology-Aware RCA (NetworkX)](day-04-topology-rca/) | 8 hours |
+| 5 | [Probabilistic RCA & Causality](day-05-causality/) | 8 hours |
+| 6 | [Alert Prioritization & Scoring](day-06-prioritization/) | 8 hours |
+| 7 | [Incident Management Integration](day-07-ops-integration/) | 4 hours |
 
 ---
 
