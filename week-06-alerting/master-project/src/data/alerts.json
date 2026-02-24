@@ -1,0 +1,42 @@
+[
+    {
+        "id": "A1",
+        "timestamp": "2026-02-23T10:00:00Z",
+        "source": "Prometheus",
+        "service": "Web-App",
+        "level": "CRITICAL",
+        "message": "HTTP 500 Internal Server Error Rate > 15%"
+    },
+    {
+        "id": "A2",
+        "timestamp": "2026-02-23T10:00:05Z",
+        "source": "Datadog",
+        "service": "Order-Service",
+        "level": "CRITICAL",
+        "message": "Connection Timeout to SQL-DB"
+    },
+    {
+        "id": "A3",
+        "timestamp": "2026-02-23T10:00:10Z",
+        "source": "Loki",
+        "service": "SQL-DB",
+        "level": "ERROR",
+        "message": "Disk I/O failure: Write timed out"
+    },
+    {
+        "id": "A4",
+        "timestamp": "2026-02-23T10:00:15Z",
+        "source": "CloudWatch",
+        "service": "Storage-Array",
+        "level": "CRITICAL",
+        "message": "Hardware Alert: Controller B failure"
+    },
+    {
+        "id": "A5",
+        "timestamp": "2026-02-23T10:05:00Z",
+        "source": "Prometheus",
+        "service": "Inventory-Service",
+        "level": "WARNING",
+        "message": "Slow response from Redis"
+    }
+]

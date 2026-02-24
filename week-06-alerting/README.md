@@ -23,9 +23,7 @@ By the end of this week, you will:
 | 2 | [Dynatrace Davis AI & RCA](day-02-dynatrace/) | 8 hours |
 | 3 | [Grafana & Prometheus Thresholds](day-03-grafana-prom/) | 8 hours |
 | 4 | [Topology-Aware RCA (NetworkX)](day-04-topology-rca/) | 8 hours |
-| 5 | [Probabilistic RCA & Causality](day-05-causality/) | 8 hours |
-| 6 | [Alert Prioritization & Scoring](day-06-prioritization/) | 8 hours |
-| 7 | [Incident Management Integration](day-07-ops-integration/) | 4 hours |
+| 5 | [Probabilistic RCA & Master Project](day-05-causality/) | 16 hours |
 
 ---
 
@@ -36,14 +34,18 @@ By the end of this week, you will:
 - **Custom ML models** - Threshold learning
 - **PagerDuty/Opsgenie APIs** - Alert integration
 
----
-
 ## ✅ Deliverables
 
-- [ ] Alert correlation engine
-- [ ] Dynamic threshold system for key metrics
-- [ ] Alert severity classifier
-- [ ] Week 6 quiz completed
+- [ ] Successful alert correlation engine
+- [ ] Root cause identification algorithm
+- [ ] Automated incident prioritization scoring
+- [ ] Week 6 Master Project completed
+
+---
+
+## 🏆 Master Project: The Alert Sentinel
+Ready to build the brain of an AIOps platform?
+👉 [Build the Alert Sentinel](master-project/)
 
 ---
 

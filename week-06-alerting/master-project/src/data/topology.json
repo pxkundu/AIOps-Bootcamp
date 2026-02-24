@@ -1,0 +1,95 @@
+{
+    "nodes": [
+        {
+            "id": "LB",
+            "type": "LoadBalancer",
+            "criticality": 5
+        },
+        {
+            "id": "Web-App",
+            "type": "Service",
+            "criticality": 4
+        },
+        {
+            "id": "Auth-Service",
+            "type": "Service",
+            "criticality": 5
+        },
+        {
+            "id": "Order-Service",
+            "type": "Service",
+            "criticality": 4
+        },
+        {
+            "id": "Payment-Gateway",
+            "type": "Service",
+            "criticality": 5
+        },
+        {
+            "id": "Inventory-Service",
+            "type": "Service",
+            "criticality": 3
+        },
+        {
+            "id": "SQL-DB",
+            "type": "Database",
+            "criticality": 5
+        },
+        {
+            "id": "Redis-Cache",
+            "type": "Cache",
+            "criticality": 2
+        },
+        {
+            "id": "Storage-Array",
+            "type": "Infrastructure",
+            "criticality": 5
+        }
+    ],
+    "edges": [
+        {
+            "source": "LB",
+            "target": "Web-App"
+        },
+        {
+            "source": "Web-App",
+            "target": "Auth-Service"
+        },
+        {
+            "source": "Web-App",
+            "target": "Order-Service"
+        },
+        {
+            "source": "Order-Service",
+            "target": "Payment-Gateway"
+        },
+        {
+            "source": "Order-Service",
+            "target": "Inventory-Service"
+        },
+        {
+            "source": "Auth-Service",
+            "target": "SQL-DB"
+        },
+        {
+            "source": "Order-Service",
+            "target": "SQL-DB"
+        },
+        {
+            "source": "Payment-Gateway",
+            "target": "SQL-DB"
+        },
+        {
+            "source": "Inventory-Service",
+            "target": "SQL-DB"
+        },
+        {
+            "source": "SQL-DB",
+            "target": "Storage-Array"
+        },
+        {
+            "source": "Inventory-Service",
+            "target": "Redis-Cache"
+        }
+    ]
+}
