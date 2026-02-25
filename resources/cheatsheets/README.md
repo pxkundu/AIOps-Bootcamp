@@ -7,6 +7,7 @@ Quick reference guides for bootcamp technologies.
 | Tool | Description |
 |------|-------------|
 | [PromQL](promql-cheatsheet.md) | Prometheus Query Language |
+| [Ansible](ansible-cheatsheet.md) | Auto-remediation with Ansible |
 | [Python Ops](python-ops-cheatsheet.md) | Python for Operations |
 | [Docker](docker-cheatsheet.md) | Container commands |
 | [Kubernetes](kubernetes-cheatsheet.md) | K8s commands and concepts |

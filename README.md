@@ -63,7 +63,7 @@ cat README.md
 ├── week-04-anomaly-detection/ # Detection & Forecasting (ARIMA/LSTM)
 ├── week-05-remediation/       # Auto-remediation & Self-Healing
 ├── week-06-alerting/          # Intelligent alerting & Correlation
-├── week-07-llm-agents/        # GenAI for AIOps (New!)
+├── week-07-remediation/       # Auto-remediation & Incident Intelligence
 ├── week-08-capstone/          # Final project & career prep
 ├── resources/                 # Cheatsheets, interview prep
 ├── infrastructure/            # Docker, K8s, Terraform configs

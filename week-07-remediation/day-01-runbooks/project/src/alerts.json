@@ -1,0 +1,9 @@
+[
+    {
+        "id": "AL-101",
+        "type": "disk_full",
+        "host": "localhost",
+        "usage": "92%",
+        "timestamp": "2026-02-24T21:45:00Z"
+    }
+]

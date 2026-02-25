@@ -19,10 +19,13 @@ By the end of this week, you will:
 
 | Day | Topic | Duration |
 |-----|-------|----------|
-| 1-2 | [Runbook Automation](day-01-runbooks/) | 8 hours |
-| 3-4 | [LLM-Assisted Troubleshooting](day-02-llm/) | 8 hours |
-| 5-6 | [ChatOps & Incident Management](day-03-chatops/) | 8 hours |
-| 7 | [Kubernetes Self-Healing](day-04-k8s/) | 4 hours |
+| 1 | [Runbook Automation & Ansible](day-01-runbooks/) | 8 hours |
+| 2 | [Self-Healing Loops & Circuit Breakers](day-01-runbooks/) | 8 hours |
+| 3 | [LLM-powered RCA & Summarization](day-02-llm/) | 8 hours |
+| 4 | [Building LLM Incident Agents](day-02-llm/) | 8 hours |
+| 5 | [ChatOps: Slack & Microsoft Teams](day-03-chatops/) | 8 hours |
+| 6 | [Interactive Remediation Bots](day-03-chatops/) | 8 hours |
+| 7 | [Kubernetes Self-Healing (KEDA)](day-04-k8s/) | 4 hours |
 
 ---
 
@@ -68,5 +71,5 @@ Level 3: Auto → Bot executes autonomously (safe ops)
 ---
 
 <p align="center">
-  <a href="../week-06-alerting/day-03-grafana-prom/lecture-notes.md">⬅️ Back: Week 6</a> | <strong>Week 7 Overview</strong> | <a href="../week-08-capstone/README.md">Begin Week 8 ➡️</a>
+  <a href="../week-06-alerting/master-project/README.md">⬅️ Back: Week 6</a> | <strong>Week 7 Overview</strong> | <a href="../week-08-capstone/README.md">Begin Week 8 ➡️</a>
 </p>

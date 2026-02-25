@@ -1,0 +1,21 @@
+---
+- name: Disk Remediation Playbook
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Cleanup old temporary files
+      find:
+        paths: /tmp
+        age: 7d
+        recurse: yes
+      register: old_files
+
+    - name: Remove identified old files
+      file:
+        path: "{{ item.path }}"
+        state: absent
+      with_items: "{{ old_files.files }}"
+
+    - name: Ensure log rotation is configured (Mock task)
+      debug:
+        msg: "Rotating logs and compressing archives..."
