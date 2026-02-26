@@ -20,7 +20,7 @@ By the end of this week, you will:
 | Day | Topic | Duration |
 |-----|-------|----------|
 | 1 | [Runbook Automation & Ansible](day-01-runbooks/) | 8 hours |
-| 2 | [Self-Healing Loops & Circuit Breakers](day-01-runbooks/) | 8 hours |
+| 2 | [Self-Healing Loops & Circuit Breakers](day-02-loops/) | 8 hours |
 | 3 | [LLM-powered RCA & Summarization](day-02-llm/) | 8 hours |
 | 4 | [Building LLM Incident Agents](day-02-llm/) | 8 hours |
 | 5 | [ChatOps: Slack & Microsoft Teams](day-03-chatops/) | 8 hours |

@@ -1,0 +1,14 @@
+{
+    "services": {
+        "auth-api": {
+            "status": "DOWN",
+            "error": "Out of Memory",
+            "can_be_fixed": false
+        },
+        "web-fe": {
+            "status": "UP",
+            "error": null,
+            "can_be_fixed": true
+        }
+    }
+}
