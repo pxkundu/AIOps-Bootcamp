@@ -21,11 +21,11 @@ By the end of this week, you will:
 |-----|-------|----------|
 | 1 | [Runbook Automation & Ansible](day-01-runbooks/) | 8 hours |
 | 2 | [Self-Healing Loops & Circuit Breakers](day-02-loops/) | 8 hours |
-| 3 | [LLM-powered RCA & Summarization](day-02-llm/) | 8 hours |
-| 4 | [Building LLM Incident Agents](day-02-llm/) | 8 hours |
-| 5 | [ChatOps: Slack & Microsoft Teams](day-03-chatops/) | 8 hours |
-| 6 | [Interactive Remediation Bots](day-03-chatops/) | 8 hours |
-| 7 | [Kubernetes Self-Healing (KEDA)](day-04-k8s/) | 4 hours |
+| 3 | [LLM-powered RCA & Summarization](day-03-llm/) | 8 hours |
+| 4 | [Building LLM Incident Agents](day-04-llm-agents/) | 8 hours |
+| 5 | [ChatOps: Slack & Microsoft Teams](day-05-chatops/) | 8 hours |
+| 6 | [Interactive Remediation Bots](day-06-remediation-bots/) | 8 hours |
+| 7 | [Kubernetes Self-Healing (KEDA)](day-07-k8s-self-healing/) | 4 hours |
 
 ---
 
