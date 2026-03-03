@@ -89,6 +89,20 @@ Enterprise organizations often have proprietary data sources. Glean allows for *
 
 ---
 
+## 🏗️ Architectural Deep Dive
+
+For a detailed look at the system's internal data flow, security discovery logic, and high-level component mapping, see:
+👉 [Glean-SEC Solution Architecture](docs/diagrams/SOLUTION_ARCHITECTURE.md)
+
+---
+
+## 📚 Resource Library
+
+Explore the official documentation, industry standards, and advanced use cases:
+👉 [Glean & Security Resources](resources/RESOURCES.md)
+
+---
+
 <p align="center">
   <a href="../../week-07-remediation/day-07-capstone/README.md">⬅️ Back: Week 7</a> | <strong>Day 1: Glean Enterprise AIOps</strong> | <a href="../day-02-capstone-build/lecture-notes.md">Next: Day 2 ➡️</a>
 </p>
