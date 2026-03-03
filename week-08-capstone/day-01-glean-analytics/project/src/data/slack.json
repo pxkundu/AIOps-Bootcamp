@@ -1,0 +1,14 @@
+[
+    {
+        "channel": "#incident-response-war-room",
+        "user": "Analyst1",
+        "message": "Out of memory on 'analytics-node-04'. Let's restart the cluster.",
+        "time": "2026-03-03T09:12:00Z"
+    },
+    {
+        "channel": "#incident-response-war-room",
+        "user": "SecOfficer",
+        "message": "Who shared the database creds on the confluence page 'Setup'? That's a security leak.",
+        "time": "2026-03-03T09:15:00Z"
+    }
+]

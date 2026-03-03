@@ -1,0 +1,16 @@
+[
+    {
+        "id": "DOC-101",
+        "title": "AIOps Analytics Setup",
+        "author": "Analyst1",
+        "content": "Building analytics pipeline for e-commerce. API Key for prod: 'PROD_SEC_KEY_VAL_9988'. Use carefully.",
+        "last_updated": "2026-03-01T10:00:00Z"
+    },
+    {
+        "id": "DOC-102",
+        "title": "Pipeline Security Policy",
+        "author": "SecOfficer",
+        "content": "All databases must be accessed via IAM roles. No plaintext passwords.",
+        "last_updated": "2026-03-02T10:00:00Z"
+    }
+]

@@ -1,0 +1,35 @@
+{
+    "connectors": [
+        {
+            "id": "CON-01",
+            "type": "Confluence",
+            "source": "https://wiki.enterprise.com/AIOps-Analytics",
+            "status": "CONNECTED",
+            "last_crawled": "2026-03-01T10:00:00Z",
+            "permissions": [
+                "Team-Analytics-Read",
+                "Admin-Full"
+            ]
+        },
+        {
+            "id": "GH-04",
+            "type": "GitHub",
+            "source": "github.com/enterprise/analytics-pipeline",
+            "status": "CONNECTED",
+            "last_webhook": "2026-03-02T15:30:00Z",
+            "permissions": [
+                "Developer-Write"
+            ]
+        },
+        {
+            "id": "SL-09",
+            "type": "Slack",
+            "source": "#incident-response-war-room",
+            "status": "ALIVE",
+            "last_message": "2026-03-03T09:12:00Z",
+            "permissions": [
+                "Public-Read"
+            ]
+        }
+    ]
+}

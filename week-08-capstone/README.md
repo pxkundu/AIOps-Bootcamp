@@ -19,10 +19,10 @@ By the end of this week, you will:
 
 | Day | Topic | Duration |
 |-----|-------|----------|
-| 1-3 | [Capstone Project Development](capstone/) | 20 hours |
-| 4-5 | [Documentation & Demo](documentation/) | 8 hours |
-| 6 | [Interview Preparation](interview-prep/) | 4 hours |
-| 7 | [Presentation & Peer Review](presentation/) | 4 hours |
+| 1 | [Enterprise Glean Analytics & Pipeline Security](day-01-glean-analytics/) | 8 hours |
+| 2-4 | [Capstone Project Build & Design](capstone/) | 20 hours |
+| 5-6 | [Documentation & Demo Preparation](documentation/) | 8 hours |
+| 7 | [Career Mastery & Final Presentation](presentation/) | 4 hours |
 
 ---
 
@@ -44,12 +44,12 @@ Build a system that:
 - Detects anomalous log sequences
 - Suggests root causes with LLM
 
-### Option 3: Predictive Alerting System
-Build a system that:
-- Forecasts key metrics
-- Implements dynamic thresholds
-- Predicts SLA breaches
-- Sends intelligent alerts
+### Option 4: Glean-SEC Enterprise Security Hub
+Build a platform using knowledge discovery patterns:
+- Multi-app ingestion (GitHub, Slack, Docs)
+- Secret & Credential leak detection
+- Causal RCA across disparate knowledge objects
+- Security Dashboard for Enterprise Portfolio
 
 ---
 
