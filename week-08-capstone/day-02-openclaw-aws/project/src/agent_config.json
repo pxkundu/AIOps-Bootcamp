@@ -1,0 +1,34 @@
+{
+    "agent_name": "AIOps Sentry Cloud",
+    "system_prompt": "You are a Cloud SRE Agent running on AWS Lightsail. Your objective is to monitor system health and resolve platform incidents using Amazon Bedrock (Claude 3.5 Sonnet). You have access to local system tools and security scanners. Always provide root cause analysis after scanning logs.",
+    "tools": [
+        {
+            "name": "check_vitals",
+            "description": "Checks memory-intensive processes and disk space on the host server.",
+            "handler": "power_tools.check_system_vitals"
+        },
+        {
+            "name": "secret_scan",
+            "description": "Scans the specified directory for leaked API keys or credentials.",
+            "parameters": [
+                "directory"
+            ],
+            "handler": "power_tools.scan_for_secrets"
+        },
+        {
+            "name": "log_narrator",
+            "description": "Fetches recently logged errors to provide an RCA summary.",
+            "parameters": [
+                "log_file",
+                "lines"
+            ],
+            "handler": "power_tools.summarize_incident_logs"
+        }
+    ],
+    "auto_triggers": [
+        {
+            "event": "disk_usage > 90%",
+            "action": "Notify WhatsApp with 'Storage Critical' alert"
+        }
+    ]
+}
