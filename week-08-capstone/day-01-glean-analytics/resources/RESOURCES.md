@@ -12,6 +12,14 @@ Explore the tools, frameworks, and theoretical foundations of Modern Enterprise 
 
 ---
 
+## 🛰️ Managed Connection Points & OpenWeb UI
+
+- **Model Context Protocol (MCP)**: [Official Overview](https://modelcontextprotocol.io/) - Standardizing how LLMs interact with external systems.
+- **OpenWeb UI - Tools & Functions**: [Integration Guide](https://docs.openwebui.com/features/tools/) - Building your own AIOps extensions.
+- **Identity Federation**: [Introduction to OIDC & JWTs](https://jwt.io/introduction/) - Secure token-based handshakes.
+
+---
+
 ## 🛡️ Enterprise Data Security & Analytics
 
 - **OWASP API Security Project**: [Top 10 API Security Risks](https://owasp.org/www-project-api-security/) - Critical for building secure analytics pipelines.

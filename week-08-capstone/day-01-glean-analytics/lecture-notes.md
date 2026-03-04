@@ -58,16 +58,30 @@ graph TD
     LLM --> UI & API & BOT
 ```
 
-### 3. Glean for AIOps & Pipeline Security
-In an AIOps context, Glean acts as the **Context Layer**. 
+### 3. Glean for AIOps & Pipeline Security (Advanced Architecture)
+In an AIOps context, Glean acts as the **Secure Context Layer**. 
 
-- **Incident RCA:** When an alert triggers, Glean can find a similar incident documented in a private Confluence page or a resolved Jira ticket from three years ago.
-- **Security in Analytics Pipelines:**
-    - **Credential Monitoring:** Identifying API keys accidentally checked into repo documentation.
-    - **Policy Enforcement:** Ensuring data analytics pipelines are accessing only authorized datasets.
-    - **Anomaly Context:** Providing the "Why" behind an anomaly by finding the corresponding "Maintenance Window" announcement in Slack.
+- **ACL Inheritance**: Fetches Access Control Lists (ACLs) directly from source APIs (GitHub, Slack) to index the *right to see* data alongside the data itself.
+- **Tag-Based Ownership**: Uses metadata tags (e.g., `owner:payment-team`) for Attribute-Based Access Control (ABAC).
+- **Query Re-evaluation**: Permissions are not static—they are re-checked at every query time to ensure real-time least-privilege enforcement.
 
-### 4. Advanced: Building Private Connectors
+#### **Enterprise Security Flow**
+
+👉 [Deep Dive: Security & Permissions Architecture](docs/SECURITY_ARCHITECTURE.md)
+
+---
+
+### 4. Managed Connection Points (MCP) in OpenWeb UI
+To provide a seamless interface for engineers, we use **Managed Connection Points (MCPs)**. These are small, specialized API tools that bridge the AIOps engine with an LLM-powered UI like OpenWeb UI.
+
+- **Token Validation**: Ensures that every tool call from the UI is authenticated.
+- **Group-Based Access**: The LLM "sees" different results depending on the user's corporate groups (e.g., SREs see logs, Developers see code).
+
+👉 [Guide: Building & Integrating MCP Tools](docs/MCP_GUIDE.md)
+
+---
+
+### 5. Advanced: Building Private Connectors
 Enterprise organizations often have proprietary data sources. Glean allows for **Custom Connectors** using their API or SDK.
 - **Push vs Pull:** Ingest data via webhooks (Push) or periodic crawls (Pull).
 - **Metadata Tagging:** Ensuring operational data is tagged with "Criticality" and "Owner" for better search relevance.
