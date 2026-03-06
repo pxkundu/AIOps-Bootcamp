@@ -1,0 +1,18 @@
+# --- Sample Terraform Variable Values ---
+# Copy this file to terraform.tfvars and fill in your values.
+
+aws_region     = "us-east-1"
+project_name   = "aiops-idp"
+instance_type  = "t3.large"
+
+# Database
+db_instance_class = "db.t3.micro"
+db_name           = "openwebui"
+db_username       = "idpadmin"
+db_password       = "CHANGE_ME_STRONG_PASSWORD"
+
+# AI Provider
+openai_api_key = "sk-CHANGE_ME_YOUR_OPENAI_KEY"
+
+# Security: Your public IP for SSH (find via `curl ifconfig.me`)
+my_ip = "YOUR_PUBLIC_IP/32"
