@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glean Connector Monitoring Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0e27;
+            --bg-card: #111638;
+            --bg-card-hover: #1a2048;
+            --border: #2a2f58;
+            --text-primary: #e8eaf6;
+            --text-secondary: #9fa8da;
+            --accent-blue: #5c6bc0;
+            --accent-green: #66bb6a;
+            --accent-yellow: #ffa726;
+            --accent-red: #ef5350;
+            --accent-purple: #ab47bc;
+            --accent-cyan: #26c6da;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 50%, #01579b 100%);
+            padding: 28px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        .header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.5px; }
+        .header .badge { background: var(--accent-green); color: #000; padding: 4px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 30px 20px; }
+
+        /* Summary Cards */
+        .summary-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 30px; }
+        .summary-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .summary-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+        .summary-card .value { font-size: 2.4rem; font-weight: 700; margin-bottom: 6px; }
+        .summary-card .label { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Connector Table */
+        .panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+        .panel-header {
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.02);
+        }
+        .panel-header h2 { font-size: 1.1rem; font-weight: 600; }
+
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; padding: 14px 20px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); border-bottom: 1px solid var(--border); }
+        td { padding: 16px 20px; border-bottom: 1px solid rgba(42,47,88,0.5); font-size: 0.9rem; }
+        tr:hover { background: var(--bg-card-hover); }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .status-active { background: rgba(102,187,106,0.15); color: var(--accent-green); border: 1px solid rgba(102,187,106,0.3); }
+        .status-crawling { background: rgba(38,198,218,0.15); color: var(--accent-cyan); border: 1px solid rgba(38,198,218,0.3); }
+        .status-warning { background: rgba(255,167,38,0.15); color: var(--accent-yellow); border: 1px solid rgba(255,167,38,0.3); }
+        .status-error { background: rgba(239,83,80,0.15); color: var(--accent-red); border: 1px solid rgba(239,83,80,0.3); }
+
+        .connector-icon { width: 28px; height: 28px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; margin-right: 10px; font-size: 0.9rem; }
+        .icon-pd { background: #06ac38; }
+        .icon-sl { background: #611f69; }
+        .icon-jr { background: #0052cc; }
+        .icon-gh { background: #333; }
+        .icon-cw { background: #ff9900; }
+        .icon-sn { background: #62d84e; }
+
+        /* Progress Bars */
+        .progress-bar { background: rgba(255,255,255,0.08); border-radius: 6px; height: 8px; overflow: hidden; width: 120px; display: inline-block; vertical-align: middle; margin-left: 8px; }
+        .progress-fill { height: 100%; border-radius: 6px; transition: width 0.6s ease; }
+
+        /* Metric Sparkline */
+        .sparkline { display: flex; align-items: flex-end; gap: 2px; height: 30px; }
+        .spark-bar { width: 6px; border-radius: 2px; background: var(--accent-blue); transition: height 0.3s; }
+        .spark-bar:hover { background: var(--accent-cyan); }
+
+        /* Alert Cards */
+        .alert-card {
+            border-left: 4px solid var(--accent-red);
+            background: rgba(239,83,80,0.05);
+            padding: 16px 20px;
+            margin: 12px 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        .alert-card.warning { border-left-color: var(--accent-yellow); background: rgba(255,167,38,0.05); }
+
+        .timestamp { font-size: 0.75rem; color: var(--text-secondary); }
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; background: rgba(92,107,192,0.2); color: var(--accent-blue); margin-right: 4px; }
+
+        @media (max-width: 900px) { .summary-grid { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div>
+        <h1>🔭 Glean Connector Monitoring Dashboard</h1>
+        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-top: 4px;">Enterprise Observability Hub — Real-time connector sync status</p>
+    </div>
+    <div>
+        <span class="badge">LIVE</span>
+        <span class="timestamp" style="margin-left: 12px;">Last refresh: 2 min ago</span>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Summary Cards -->
+    <div class="summary-grid">
+        <div class="summary-card">
+            <div class="value" style="color: var(--accent-blue);">6</div>
+            <div class="label">Total Connectors</div>
+        </div>
+        <div class="summary-card">
+            <div class="value" style="color: var(--accent-green);">4</div>
+            <div class="label">Healthy</div>
+        </div>
+        <div class="summary-card">
+            <div class="value" style="color: var(--accent-yellow);">1</div>
+            <div class="label">Warning</div>
+        </div>
+        <div class="summary-card">
+            <div class="value" style="color: var(--accent-red);">1</div>
+            <div class="label">Critical</div>
+        </div>
+        <div class="summary-card">
+            <div class="value" style="color: var(--accent-cyan);">12,847</div>
+            <div class="label">Total Items Indexed</div>
+        </div>
+    </div>
+
+    <!-- Connector Health Table -->
+    <div class="panel">
+        <div class="panel-header">
+            <h2>📡 Connector Sync Status</h2>
+            <span class="timestamp">Updated every 60s</span>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Connector</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Items Synced</th>
+                    <th>Change Rate</th>
+                    <th>Sync Progress (7d)</th>
+                    <th>Last Crawl</th>
+                    <th>Visibility</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="connector-icon icon-pd">🔔</span><strong>PagerDuty</strong></td>
+                    <td><span class="tag">Native</span></td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                    <td>1,842</td>
+                    <td>23 items/day</td>
+                    <td>
+                        <div class="sparkline">
+                            <div class="spark-bar" style="height: 40%;"></div>
+                            <div class="spark-bar" style="height: 55%;"></div>
+                            <div class="spark-bar" style="height: 70%;"></div>
+                            <div class="spark-bar" style="height: 60%;"></div>
+                            <div class="spark-bar" style="height: 80%;"></div>
+                            <div class="spark-bar" style="height: 90%;"></div>
+                            <div class="spark-bar" style="height: 100%;"></div>
+                        </div>
+                    </td>
+                    <td class="timestamp">5 min ago</td>
+                    <td><span class="tag">Everyone</span></td>
+                </tr>
+                <tr>
+                    <td><span class="connector-icon icon-sl">💬</span><strong>Slack</strong></td>
+                    <td><span class="tag">Native</span></td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                    <td>8,291</td>
+                    <td>156 items/day</td>
+                    <td>
+                        <div class="sparkline">
+                            <div class="spark-bar" style="height: 90%;"></div>
+                            <div class="spark-bar" style="height: 85%;"></div>
+                            <div class="spark-bar" style="height: 100%;"></div>
+                            <div class="spark-bar" style="height: 95%;"></div>
+                            <div class="spark-bar" style="height: 88%;"></div>
+                            <div class="spark-bar" style="height: 92%;"></div>
+                            <div class="spark-bar" style="height: 97%;"></div>
+                        </div>
+                    </td>
+                    <td class="timestamp">2 min ago</td>
+                    <td><span class="tag">Everyone</span></td>
+                </tr>
+                <tr>
+                    <td><span class="connector-icon icon-jr">📋</span><strong>Jira</strong></td>
+                    <td><span class="tag">Native</span></td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                    <td>2,104</td>
+                    <td>12 items/day</td>
+                    <td>
+                        <div class="sparkline">
+                            <div class="spark-bar" style="height: 30%;"></div>
+                            <div class="spark-bar" style="height: 45%;"></div>
+                            <div class="spark-bar" style="height: 50%;"></div>
+                            <div class="spark-bar" style="height: 55%;"></div>
+                            <div class="spark-bar" style="height: 48%;"></div>
+                            <div class="spark-bar" style="height: 60%;"></div>
+                            <div class="spark-bar" style="height: 65%;"></div>
+                        </div>
+                    </td>
+                    <td class="timestamp">1 hr ago</td>
+                    <td><span class="tag">Test Group</span></td>
+                </tr>
+                <tr>
+                    <td><span class="connector-icon icon-gh">🐙</span><strong>GitHub</strong></td>
+                    <td><span class="tag">Native</span></td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                    <td>421</td>
+                    <td>8 items/day</td>
+                    <td>
+                        <div class="sparkline">
+                            <div class="spark-bar" style="height: 20%;"></div>
+                            <div class="spark-bar" style="height: 35%;"></div>
+                            <div class="spark-bar" style="height: 50%;"></div>
+                            <div class="spark-bar" style="height: 30%;"></div>
+                            <div class="spark-bar" style="height: 40%;"></div>
+                            <div class="spark-bar" style="height: 25%;"></div>
+                            <div class="spark-bar" style="height: 55%;"></div>
+                        </div>
+                    </td>
+                    <td class="timestamp">15 min ago</td>
+                    <td><span class="tag">Everyone</span></td>
+                </tr>
+                <tr>
+                    <td><span class="connector-icon icon-cw">📊</span><strong>CloudWatch</strong></td>
+                    <td><span class="tag">Custom</span></td>
+                    <td><span class="status-badge status-warning">Stalled</span></td>
+                    <td>189</td>
+                    <td style="color: var(--accent-yellow);">0 items/day ⚠️</td>
+                    <td>
+                        <div class="sparkline">
+                            <div class="spark-bar" style="height: 60%; background: var(--accent-yellow);"></div>
+                            <div class="spark-bar" style="height: 45%; background: var(--accent-yellow);"></div>
+                            <div class="spark-bar" style="height: 20%; background: var(--accent-yellow);"></div>
+                            <div class="spark-bar" style="height: 5%; background: var(--accent-red);"></div>
+                            <div class="spark-bar" style="height: 2%; background: var(--accent-red);"></div>
+                            <div class="spark-bar" style="height: 0%; background: var(--accent-red);"></div>
+                            <div class="spark-bar" style="height: 0%; background: var(--accent-red);"></div>
+                        </div>
+                    </td>
+                    <td class="timestamp">26 hrs ago</td>
+                    <td><span class="tag">Test Group</span></td>
+                </tr>
+                <tr>
+                    <td><span class="connector-icon icon-sn">🎫</span><strong>ServiceNow</strong></td>
+                    <td><span class="tag">Native</span></td>
+                    <td><span class="status-badge status-error">Error</span></td>
+                    <td style="color: var(--accent-red);">0</td>
+                    <td style="color: var(--accent-red);">0 items/day</td>
+                    <td>
+                        <div class="sparkline">
+                            <div class="spark-bar" style="height: 0%; background: var(--accent-red);"></div>
+                            <div class="spark-bar" style="height: 0%; background: var(--accent-red);"></div>
+                            <div class="spark-bar" style="height: 0%; background: var(--accent-red);"></div>
+                            <div class="spark-bar" style="height: 0%; background: var(--accent-red);"></div>
+                            <div class="spark-bar" style="height: 0%; background: var(--accent-red);"></div>
+                            <div class="spark-bar" style="height: 0%; background: var(--accent-red);"></div>
+                            <div class="spark-bar" style="height: 0%; background: var(--accent-red);"></div>
+                        </div>
+                    </td>
+                    <td class="timestamp">Never</td>
+                    <td><span class="tag">Test Group</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Alerts Panel -->
+    <div class="panel">
+        <div class="panel-header">
+            <h2>🚨 Active Connector Alerts</h2>
+            <span style="color: var(--accent-red); font-weight: 600;">2 open</span>
+        </div>
+        <div class="alert-card warning">
+            <div style="display: flex; justify-content: space-between;">
+                <strong>⚠️ CloudWatch — Sync Stalled</strong>
+                <span class="timestamp">Detected 2 hrs ago</span>
+            </div>
+            <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-secondary);">
+                Change rate has been 0 for 26 hours. Verify IAM permissions and CloudWatch API rate limits. 
+                Check <code>data_rules.namespaces</code> in config for scope misconfiguration.
+            </p>
+        </div>
+        <div class="alert-card">
+            <div style="display: flex; justify-content: space-between;">
+                <strong>🔴 ServiceNow — Authentication Failed</strong>
+                <span class="timestamp">Detected 4 hrs ago</span>
+            </div>
+            <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-secondary);">
+                OAuth token expired. 0 items synced. Re-authenticate via Admin Console → Data Sources → ServiceNow → Edit → Re-authorize.
+            </p>
+        </div>
+    </div>
+
+    <!-- Content Type Breakdown -->
+    <div class="panel">
+        <div class="panel-header">
+            <h2>📂 Content Type Distribution</h2>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Connector</th>
+                    <th>Incidents</th>
+                    <th>Messages</th>
+                    <th>Tickets</th>
+                    <th>Code/PRs</th>
+                    <th>Metrics</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>PagerDuty</strong></td>
+                    <td>1,842</td><td>—</td><td>—</td><td>—</td><td>—</td>
+                    <td><strong>1,842</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Slack</strong></td>
+                    <td>—</td><td>8,291</td><td>—</td><td>—</td><td>—</td>
+                    <td><strong>8,291</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Jira</strong></td>
+                    <td>—</td><td>—</td><td>2,104</td><td>—</td><td>—</td>
+                    <td><strong>2,104</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>GitHub</strong></td>
+                    <td>—</td><td>—</td><td>—</td><td>421</td><td>—</td>
+                    <td><strong>421</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>CloudWatch</strong></td>
+                    <td>—</td><td>—</td><td>—</td><td>—</td><td>189</td>
+                    <td><strong>189</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script>
+    // Auto-refresh simulation
+    setInterval(() => {
+        const badges = document.querySelectorAll('.header .timestamp');
+        badges.forEach(b => b.textContent = 'Last refresh: just now');
+        setTimeout(() => badges.forEach(b => b.textContent = 'Last refresh: 2 min ago'), 5000);
+    }, 30000);
+</script>
+
+</body>
+</html>

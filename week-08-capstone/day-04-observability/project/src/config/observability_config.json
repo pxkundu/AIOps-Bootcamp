@@ -1,0 +1,100 @@
+{
+    "connectors": [
+        {
+            "name": "PagerDuty",
+            "type": "native",
+            "auth_method": "api_key",
+            "crawl_frequency": "real-time",
+            "visibility": "test-group-only",
+            "data_rules": {
+                "include": [
+                    "service:payment-api",
+                    "service:compute-cluster"
+                ],
+                "exclude": [
+                    "service:internal-hr"
+                ]
+            }
+        },
+        {
+            "name": "Slack",
+            "type": "native",
+            "auth_method": "bot_token",
+            "crawl_frequency": "real-time",
+            "visibility": "visible-to-everyone",
+            "data_rules": {
+                "include_channels": [
+                    "#sre-war-room",
+                    "#production-alerts",
+                    "#general"
+                ],
+                "exclude_channels": [
+                    "#hr-confidential",
+                    "#finance-internal"
+                ]
+            }
+        },
+        {
+            "name": "Jira",
+            "type": "native",
+            "auth_method": "oauth2",
+            "crawl_frequency": "hourly",
+            "visibility": "test-group-only",
+            "data_rules": {
+                "include_projects": [
+                    "INFRA",
+                    "SRE",
+                    "PLATFORM"
+                ],
+                "exclude_projects": [
+                    "HR",
+                    "LEGAL"
+                ]
+            }
+        },
+        {
+            "name": "GitHub",
+            "type": "native",
+            "auth_method": "pat",
+            "crawl_frequency": "webhook",
+            "visibility": "visible-to-everyone",
+            "data_rules": {
+                "include_repos": [
+                    "enterprise/payment-service",
+                    "enterprise/infra-helm"
+                ],
+                "exclude_repos": [
+                    "enterprise/secret-configs"
+                ]
+            }
+        },
+        {
+            "name": "CloudWatch",
+            "type": "custom",
+            "auth_method": "iam_role",
+            "crawl_frequency": "every-5-minutes",
+            "visibility": "test-group-only",
+            "data_rules": {
+                "namespaces": [
+                    "AWS/RDS",
+                    "AWS/EC2",
+                    "AWS/ECS"
+                ],
+                "metrics": [
+                    "CPUUtilization",
+                    "DatabaseConnections",
+                    "MemoryUtilization"
+                ]
+            }
+        }
+    ],
+    "mcp_actions": {
+        "server_url": "http://localhost:5002",
+        "auth": "bearer_token",
+        "human_in_the_loop": true
+    },
+    "alerting": {
+        "correlation_window_hours": 4,
+        "escalation_channel": "#sre-oncall"
+    }
+}
