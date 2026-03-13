@@ -1,0 +1,59 @@
+{
+  "knowledge_graph": {
+    "content_sources": [
+      { "name": "Service Catalog", "type": "custom", "crawl_frequency": "hourly" },
+      { "name": "OKR Tool", "type": "custom", "crawl_frequency": "daily" },
+      { "name": "Internal Wiki", "type": "custom", "crawl_frequency": "hourly" },
+      { "name": "Developer Portal", "type": "custom", "crawl_frequency": "webhook" },
+      { "name": "GitHub", "type": "native", "crawl_frequency": "real-time" },
+      { "name": "Slack", "type": "native", "crawl_frequency": "real-time" },
+      { "name": "Jira", "type": "native", "crawl_frequency": "hourly" },
+      { "name": "Confluence", "type": "native", "crawl_frequency": "hourly" }
+    ],
+    "people_intelligence": {
+      "identity_sources": ["HRIS", "Slack", "GitHub", "Jira"],
+      "expertise_auto_tag": true,
+      "collaboration_graph": true,
+      "profile_customization": true
+    },
+    "activity_tracking": {
+      "search_history": true,
+      "view_tracking": true,
+      "knowledge_gap_detection": true,
+      "anonymize_after_days": 30
+    },
+    "collective_intelligence": {
+      "trending_computation": "hourly",
+      "organic_boosting": true,
+      "team_recommendations": true
+    }
+  },
+  "idp_portal": {
+    "host": "0.0.0.0",
+    "port": 5005,
+    "features": {
+      "search": true,
+      "service_catalog": true,
+      "people_directory": true,
+      "okr_dashboard": true,
+      "knowledge_gaps": true,
+      "trending": true,
+      "faceted_search": true
+    }
+  },
+  "aws_deployment": {
+    "compute": "ECS Fargate",
+    "database": "RDS PostgreSQL 16",
+    "storage": "S3",
+    "load_balancer": "ALB",
+    "secrets": "AWS Secrets Manager",
+    "logging": "CloudWatch",
+    "region": "us-east-1"
+  },
+  "glean_integration": {
+    "indexing_api_endpoint": "https://customer-api.glean.com/api/indexing/v1",
+    "search_api_endpoint": "https://customer-api.glean.com/api/v1/search",
+    "auth_method": "bearer_token",
+    "token_env_var": "GLEAN_API_TOKEN"
+  }
+}

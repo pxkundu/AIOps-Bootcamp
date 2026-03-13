@@ -23,7 +23,8 @@ By the end of this week, you will:
 | 2 | [Cloud-Hosted AI: AWS Lightsail & OpenClaw](day-02-openclaw-aws/) | 8 hours |
 | 3 | [IDP Capstone: OpenWebUI + Bedrock on EC2](day-03-idp-platform/) | 8 hours |
 | 4 | [Enterprise Observability Hub (Glean Connectors)](day-04-observability/) | 8 hours |
-| 5-6 | [Documentation & Demo Preparation](documentation/) | 8 hours |
+| 5 | [AWS Cloud IDP with Glean Knowledge Graph](day-05-knowledge-graph-idp/) | 8 hours |
+| 6 | [Documentation & Demo Preparation](documentation/) | 8 hours |
 | 7 | [Career Mastery & Final Presentation](presentation/) | 4 hours |
 
 ---
