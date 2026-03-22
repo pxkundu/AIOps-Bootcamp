@@ -1,6 +1,6 @@
-# Week 7: Auto-Remediation & Incident Intelligence
+# Week 7: Generative AI for AIOps
 
-> **Theme:** Closing the loop with automated response
+> **Theme:** LLM-powered operations — from runbook automation to autonomous SRE agents
 
 ---
 

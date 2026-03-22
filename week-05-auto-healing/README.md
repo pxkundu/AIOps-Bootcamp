@@ -1,4 +1,4 @@
-# Week 5: Auto-Remediation & Closed-Loop Control
+# Week 5: Auto-Healing & Closed-Loop Control
 
 > **Theme:** Moving from "Knowing" to "Acting" – Building the self-healing cloud
 

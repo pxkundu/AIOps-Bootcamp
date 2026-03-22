@@ -61,5 +61,5 @@ We will build a dashboard that shows the "Confidence Bands" (Upper and Lower bou
 ---
 
 <p align="center">
-  <a href="../day-02-dynatrace/lecture-notes.md">⬅️ Back: Day 2</a> | <strong>Day 3: Grafana & Prometheus</strong> | <a href="../../week-07-remediation/README.md">Begin Week 7 ➡️</a>
+  <a href="../day-02-dynatrace/lecture-notes.md">⬅️ Back: Day 2</a> | <strong>Day 3: Grafana & Prometheus</strong> | <a href="../../week-07-genai-ops/README.md">Begin Week 7 ➡️</a>
 </p>

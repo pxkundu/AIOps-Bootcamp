@@ -118,5 +118,5 @@ Explore the official documentation, industry standards, and advanced use cases:
 ---
 
 <p align="center">
-  <a href="../../week-07-remediation/day-07-capstone/README.md">⬅️ Back: Week 7</a> | <strong>Day 1: Glean Enterprise AIOps</strong> | <a href="../day-02-capstone-build/lecture-notes.md">Next: Day 2 ➡️</a>
+  <a href="../../week-07-genai-ops/day-07-capstone/README.md">⬅️ Back: Week 7</a> | <strong>Day 1: Glean Enterprise AIOps</strong> | <a href="../day-02-capstone-build/lecture-notes.md">Next: Day 2 ➡️</a>
 </p>

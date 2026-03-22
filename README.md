@@ -253,7 +253,7 @@ graph LR
 | 5 | Self-Healing Capstone |
 
 **🔧 Tools:** Ansible, Kubernetes, Python, RL Agents
-**📦 [Start Week 5 →](week-05-remediation/)**
+**📦 [Start Week 5 →](week-05-auto-healing/)**
 
 </td>
 <td>
@@ -295,7 +295,7 @@ graph LR
 | 7 | Gen AI Capstone |
 
 **🔧 Tools:** OpenAI, LangChain, RAG, ChromaDB
-**📦 [Start Week 7 →](week-07-remediation/)**
+**📦 [Start Week 7 →](week-07-genai-ops/)**
 
 </td>
 <td>
@@ -488,7 +488,7 @@ AIOps-Bootcamp/
 │   ├── day-04-deep-learning/       ← LSTM & Autoencoders
 │   └── day-05-capstone/            ← Detection capstone
 │
-├── ⚡ week-05-remediation/          ← Self-healing systems
+├── ⚡ week-05-auto-healing/          ← Self-healing systems
 │   ├── day-01-rule-based/          ← Rule-based remediation
 │   ├── day-02-context/             ← Context-aware decisions
 │   ├── day-03-event-driven/        ← Event-driven automation
@@ -503,7 +503,7 @@ AIOps-Bootcamp/
 │   ├── day-05-causality/           ← Causal inference
 │   └── master-project/             ← Week 6 master project
 │
-├── 🤖 week-07-remediation/         ← Generative AI for AIOps
+├── 🤖 week-07-genai-ops/            ← Generative AI for AIOps
 │   ├── day-01-runbooks/            ← AI-powered runbooks
 │   ├── day-02-loops/               ← Feedback loops
 │   ├── day-03-llm/                 ← LLM integration

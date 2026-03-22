@@ -65,5 +65,5 @@ In this project, we simulate a hardware failure in `Storage-Array`.
 ---
 
 <p align="center">
-  <a href="../day-05-causality/lecture-notes.md">⬅️ Back: Day 5</a> | <strong>Master Project</strong> | <a href="../../week-07-remediation/README.md">Go to Week 7 ➡️</a>
+  <a href="../day-05-causality/lecture-notes.md">⬅️ Back: Day 5</a> | <strong>Master Project</strong> | <a href="../../week-07-genai-ops/README.md">Go to Week 7 ➡️</a>
 </p>

@@ -72,5 +72,5 @@ Benefits:
 ---
 
 <p align="center">
-  <a href="../week-05-remediation/day-05-capstone/lecture-notes.md">⬅️ Back: Week 5</a> | <strong>Week 6 Overview</strong> | <a href="day-01-datadog/lecture-notes.md">Start Week 6 ➡️</a>
+  <a href="../week-05-auto-healing/day-05-capstone/lecture-notes.md">⬅️ Back: Week 5</a> | <strong>Week 6 Overview</strong> | <a href="day-01-datadog/lecture-notes.md">Start Week 6 ➡️</a>
 </p>

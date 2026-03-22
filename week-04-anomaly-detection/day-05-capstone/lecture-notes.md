@@ -78,5 +78,5 @@ The definition of "Normal" changes.
 ---
 
 <p align="center">
-  <a href="../day-04-deep-learning/lecture-notes.md">⬅️ Back: Day 4</a> | <strong>Day 5: Capstone Project</strong> | <a href="../../week-05-remediation/README.md">Begin Week 5 ➡️</a>
+  <a href="../day-04-deep-learning/lecture-notes.md">⬅️ Back: Day 4</a> | <strong>Day 5: Capstone Project</strong> | <a href="../../week-05-auto-healing/README.md">Begin Week 5 ➡️</a>
 </p>
