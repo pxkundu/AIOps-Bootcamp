@@ -96,7 +96,7 @@ mindmap
 | ☁️ **Terraform configs** | 5 production-ready IaC modules |
 | 🐳 **Docker configs** | 3 containerized environments |
 | 🧪 **Hands-on projects** | 15+ end-to-end projects |
-| 🏗️ **Capstone projects** | 5 enterprise-grade capstones |
+| 🏗️ **Capstone projects** | 6 enterprise-grade capstones |
 
 ---
 
@@ -303,7 +303,7 @@ graph LR
 #### 🏆 Week 8: Enterprise Capstone Projects
 > *"Prove your skills with real-world enterprise solutions."*
 
-**5 capstone projects** deploying production-ready platforms on AWS using Glean, OpenClaw, Terraform, and Knowledge Graphs.
+**6 capstone projects** deploying production-ready platforms on AWS using Glean, OpenClaw, Terraform, and Knowledge Graphs.
 
 | Day | Capstone |
 |-----|----------|
@@ -312,6 +312,7 @@ graph LR
 | 3 | IDP: OpenWebUI + Bedrock on EC2 |
 | 4 | Enterprise Observability Hub |
 | 5 | Knowledge Graph IDP on AWS |
+| 6 | AI Transformation Platform |
 
 **🔧 Tools:** Glean, AWS, Terraform, ECS Fargate, RDS
 **📦 [Start Week 8 →](week-08-capstone/)**
@@ -419,7 +420,7 @@ graph TD
 
 ## 🏆 Capstone Projects
 
-Week 8 features **5 enterprise-grade capstone projects** that deploy real platforms:
+Week 8 features **6 enterprise-grade capstone projects** that deploy real platforms:
 
 | # | Project | Tech Stack | What You Build |
 |---|---------|------------|----------------|
@@ -428,6 +429,7 @@ Week 8 features **5 enterprise-grade capstone projects** that deploy real platfo
 | 3 | **[IDP on EC2](week-08-capstone/day-03-idp-platform/)** | OpenWebUI, Terraform, RDS | Internal Developer Platform with dual LLM support (OpenAI + Bedrock) |
 | 4 | **[Observability Hub](week-08-capstone/day-04-observability/)** | Glean Connectors, Flask | Multi-source monitoring with alert correlation and MCP action server |
 | 5 | **[Knowledge Graph IDP](week-08-capstone/day-05-knowledge-graph-idp/)** | Glean KG, ECS Fargate, RDS | Enterprise IDP on AWS implementing all 4 Knowledge Graph pillars |
+| 6 | **[AI Transformation Platform](week-08-capstone/day-06-ai-transformation/)** | Glean WAI, Flask, Python | 10-pillar maturity assessment with AI agents for sludge detection and ROI |
 
 ---
 
@@ -517,7 +519,8 @@ AIOps-Bootcamp/
 │   ├── day-02-openclaw-aws/        ← OpenClaw on AWS Lightsail
 │   ├── day-03-idp-platform/        ← IDP: OpenWebUI + Bedrock
 │   ├── day-04-observability/       ← Observability Hub
-│   └── day-05-knowledge-graph-idp/ ← Knowledge Graph IDP on AWS
+│   ├── day-05-knowledge-graph-idp/ ← Knowledge Graph IDP on AWS
+│   └── day-06-ai-transformation/   ← AI Transformation Platform
 │
 ├── 📚 resources/                    ← Cheatsheets & interview prep
 ├── 🐳 infrastructure/              ← Docker & K8s configs

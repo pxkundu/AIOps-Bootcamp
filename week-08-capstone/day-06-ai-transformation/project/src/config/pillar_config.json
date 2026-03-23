@@ -1,0 +1,127 @@
+{
+  "pillars": {
+    "division_of_labor": {
+      "weight": 1.2,
+      "quick_win_potential": "high",
+      "typical_roi_timeline_weeks": 2,
+      "dependencies": [],
+      "anti_patterns": [
+        "Automating work that fuels intrinsic motivation",
+        "Stripping humanity from customer relationships",
+        "Producing generic, soulless AI outputs"
+      ]
+    },
+    "expertise": {
+      "weight": 1.0,
+      "quick_win_potential": "medium",
+      "typical_roi_timeline_weeks": 6,
+      "dependencies": ["roles"],
+      "anti_patterns": [
+        "Vibe coding the last mile without expert review",
+        "Ignoring domain experts because AI 'knows better'",
+        "Over-relying on generalists for production-critical systems"
+      ]
+    },
+    "roles": {
+      "weight": 1.1,
+      "quick_win_potential": "medium",
+      "typical_roi_timeline_weeks": 4,
+      "dependencies": ["control", "expertise"],
+      "anti_patterns": [
+        "Creating new AI roles as knee-jerk solutions",
+        "Backing people who talk smart over those who do smart things",
+        "Deciding prompt engineering is a role when it should be universal"
+      ]
+    },
+    "control": {
+      "weight": 1.0,
+      "quick_win_potential": "low",
+      "typical_roi_timeline_weeks": 8,
+      "dependencies": ["leadership"],
+      "anti_patterns": [
+        "Leading AI if you don't use AI",
+        "Centralizing everything under one department for 'risk management'",
+        "Treating standardized AI as a dirty word"
+      ]
+    },
+    "coordination": {
+      "weight": 1.3,
+      "quick_win_potential": "high",
+      "typical_roi_timeline_weeks": 4,
+      "dependencies": ["division_of_labor"],
+      "anti_patterns": [
+        "Bolting AI onto broken systems",
+        "Thinking in disconnected tasks instead of understanding work flows",
+        "Letting bots pass friction from you to others"
+      ]
+    },
+    "hiring_talent": {
+      "weight": 0.9,
+      "quick_win_potential": "low",
+      "typical_roi_timeline_weeks": 12,
+      "dependencies": ["measurement", "control"],
+      "anti_patterns": [
+        "Cutting jobs before AI gains are demonstrated",
+        "Using AI to replace hiring judgment entirely",
+        "Ignoring AI-amplified bias in LLM recommendations"
+      ]
+    },
+    "learning_development": {
+      "weight": 1.1,
+      "quick_win_potential": "high",
+      "typical_roi_timeline_weeks": 2,
+      "dependencies": ["leadership", "roles"],
+      "anti_patterns": [
+        "Using AI as substitute for thinking instead of thinking partner",
+        "Turning AI adoption into a stack-rank exercise",
+        "Rewarding 'AI theater' — flashy demos without real impact"
+      ]
+    },
+    "innovation": {
+      "weight": 1.0,
+      "quick_win_potential": "medium",
+      "typical_roi_timeline_weeks": 8,
+      "dependencies": ["learning_development"],
+      "anti_patterns": [
+        "Falling for AI vendor jargon monoxide",
+        "Not questioning whether AI is the right tool",
+        "Hoarding best tools for experts only"
+      ]
+    },
+    "leadership": {
+      "weight": 1.2,
+      "quick_win_potential": "high",
+      "typical_roi_timeline_weeks": 1,
+      "dependencies": [],
+      "anti_patterns": [
+        "Using AI to crank out more work instead of better work",
+        "Imposing 'hand-waving' metrics from on high",
+        "Training a personal bot without telling people it's not you"
+      ]
+    },
+    "measurement": {
+      "weight": 1.1,
+      "quick_win_potential": "medium",
+      "typical_roi_timeline_weeks": 4,
+      "dependencies": ["leadership"],
+      "anti_patterns": [
+        "Vanity metrics like 'deployed 50 AI tools'",
+        "Projected savings without verification",
+        "Keeping metrics only at management level"
+      ]
+    }
+  },
+  "maturity_benchmarks": {
+    "industry_averages": {
+      "technology": 3.2,
+      "financial_services": 2.8,
+      "healthcare": 2.1,
+      "retail": 2.5,
+      "manufacturing": 2.3,
+      "government": 1.8,
+      "education": 2.0
+    },
+    "top_quartile_threshold": 4.0,
+    "bottom_quartile_threshold": 2.0
+  }
+}

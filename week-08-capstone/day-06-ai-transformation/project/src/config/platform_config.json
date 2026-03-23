@@ -1,0 +1,133 @@
+{
+  "platform": {
+    "name": "AI Transformation Platform",
+    "version": "1.0.0",
+    "source": "Glean Work AI Institute — AI Transformation 100",
+    "source_url": "https://www.glean.com/work-ai-institute/ai-transformation-100"
+  },
+  "assessment": {
+    "total_pillars": 10,
+    "questions_per_pillar": 3,
+    "maturity_levels": 5,
+    "scoring": {
+      "min_score": 1,
+      "max_score": 5,
+      "method": "arithmetic_mean",
+      "level_thresholds": {
+        "ad_hoc": [1.0, 1.49],
+        "opportunistic": [1.5, 2.49],
+        "systematic": [2.5, 3.49],
+        "managed": [3.5, 4.49],
+        "optimizing": [4.5, 5.0]
+      }
+    },
+    "recommendation_priority_weights": {
+      "impact": 0.4,
+      "feasibility": 0.3,
+      "quick_win": 0.2,
+      "strategic_alignment": 0.1
+    }
+  },
+  "agents": {
+    "sludge_detector": {
+      "enabled": true,
+      "scan_sources": ["calendar", "email", "slack", "jira", "confluence"],
+      "impact_formula": "frequency × time_per_task × (6 - sentiment) × automation_feasibility / 100",
+      "top_n_targets": 5,
+      "cost_per_hour": 90
+    },
+    "champion_finder": {
+      "enabled": true,
+      "scan_sources": ["ai_tool_logs", "slack_tips", "hackathon_submissions"],
+      "champion_formula": "usage_freq × 0.3 + sharing_ratio × 0.3 + implementation_rate × 0.4",
+      "min_champion_score": 10,
+      "min_weekly_usage": 5
+    },
+    "coordination_auditor": {
+      "enabled": true,
+      "scan_sources": ["jira_workflows", "document_handoffs", "tool_switch_logs"],
+      "toggle_tax_weight_minutes": 6,
+      "handoff_latency_threshold_hours": 4
+    },
+    "innovation_scanner": {
+      "enabled": true,
+      "scan_sources": ["experiment_registry", "vendor_proposals", "pilot_metrics"],
+      "ai_washing_threshold": 3,
+      "experiment_phases": ["ideation", "prototype", "pilot", "production", "retired"],
+      "expected_failure_rate_percent": 70
+    }
+  },
+  "deployment": {
+    "provider": "aws",
+    "region": "us-east-1",
+    "compute": {
+      "service": "ecs_fargate",
+      "platform_task": {
+        "cpu": 2048,
+        "memory": 4096,
+        "desired_count": 2
+      },
+      "agent_task": {
+        "cpu": 1024,
+        "memory": 2048,
+        "desired_count": 1
+      }
+    },
+    "database": {
+      "engine": "postgresql",
+      "version": "16",
+      "instance_class": "db.t3.medium",
+      "allocated_storage_gb": 20,
+      "multi_az": false
+    },
+    "cache": {
+      "engine": "redis",
+      "node_type": "cache.t3.micro"
+    },
+    "storage": {
+      "reports_bucket": "ai-transformation-reports",
+      "export_format": "pdf"
+    },
+    "monitoring": {
+      "service": "cloudwatch",
+      "log_retention_days": 30,
+      "alarm_thresholds": {
+        "cpu_percent": 80,
+        "memory_percent": 85,
+        "error_rate_percent": 5
+      }
+    }
+  },
+  "ui": {
+    "theme": "dark",
+    "primary_color": "#6c5ce7",
+    "accent_color": "#a29bfe",
+    "font_family": "Inter, sans-serif",
+    "dashboard": {
+      "refresh_interval_seconds": 30,
+      "radar_chart_axes": 10,
+      "max_recommendations_shown": 10,
+      "sludge_heatmap_enabled": true,
+      "champion_network_graph_enabled": true
+    }
+  },
+  "roi_calculation": {
+    "default_org_size": 1000,
+    "hourly_rate_usd": 90,
+    "working_weeks_per_year": 52,
+    "sludge_recovery_factor_per_level_gap": 200,
+    "coordination_recovery_factor_per_level_gap": 150,
+    "conservative_multiplier": 0.7,
+    "note": "All estimates use conservative multiplier; actual savings may be higher"
+  },
+  "ai_washing_gut_check": {
+    "tests": [
+      {"id": 1, "name": "Outlandish Promises Test", "question": "Can they show working AI today, not just roadmap?"},
+      {"id": 2, "name": "AI Residue Test", "question": "Remove 'AI' from the pitch — does the story collapse?"},
+      {"id": 3, "name": "Reference Ghosting Test", "question": "Can they produce happy current customers?"},
+      {"id": 4, "name": "Human-in-the-Loop Test", "question": "Does it enhance judgment or replace it entirely?"},
+      {"id": 5, "name": "Missing Metric Test", "question": "Is every claim tied to a specific, measurable outcome?"}
+    ],
+    "pass_threshold": "Must pass at least 4 of 5 tests"
+  }
+}
