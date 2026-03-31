@@ -29,6 +29,7 @@
 
 <p align="center">
   <a href="#-quick-start">Quick Start</a> •
+  <a href="#-reference--resources">Resources</a> •
   <a href="#-the-8-week-roadmap">Roadmap</a> •
   <a href="#-what-makes-this-bootcamp-different">Why This?</a> •
   <a href="#-technology-universe">Tech Stack</a> •
@@ -126,6 +127,19 @@ cat README.md
 | 🔧 **DevOps** | Foundational | CI/CD concepts, basic monitoring |
 
 👉 [Detailed Prerequisites Guide](PREREQUISITES.md)
+
+---
+
+## 📚 Reference & Resources
+
+Curated docs beyond the weekly modules—books, cheatsheets, interview prep, and AI tooling.
+
+| Resource | What you'll find |
+|----------|------------------|
+| [Reading list](resources/reading-list.md) | Books, papers, blogs, and official tool docs |
+| [Model Context Protocol (MCP)](resources/mcp-model-context-protocol.md) | MCP concepts, MCP hosts by LLM ecosystem, server discovery & registry, security |
+| [Cheatsheets](resources/cheatsheets/README.md) | PromQL, Ansible, Docker, Kubernetes, and more |
+| [Interview prep](resources/interview-prep/README.md) | Common AIOps interview questions |
 
 ---
 
@@ -522,7 +536,7 @@ AIOps-Bootcamp/
 │   ├── day-05-knowledge-graph-idp/ ← Knowledge Graph IDP on AWS
 │   └── day-06-ai-transformation/   ← AI Transformation Platform
 │
-├── 📚 resources/                    ← Cheatsheets & interview prep
+├── 📚 resources/                    ← Reading list, MCP guide, cheatsheets, interview prep
 ├── 🐳 infrastructure/              ← Docker & K8s configs
 └── 💬 community/                   ← Discussions & showcase
 ```

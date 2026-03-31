@@ -75,6 +75,9 @@ Curated resources for deepening your AIOps knowledge.
 - [Prophet](https://facebook.github.io/prophet/)
 - [PyOD](https://pyod.readthedocs.io/)
 
+### AI agents & tool protocols
+- [Model Context Protocol (MCP): concepts, clients, and servers](mcp-model-context-protocol.md) — MCP overview, hosts by ecosystem, server discovery, security
+
 ---
 
 *Happy reading! 📖*
