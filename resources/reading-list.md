@@ -77,6 +77,7 @@ Curated resources for deepening your AIOps knowledge.
 
 ### AI agents & tool protocols
 - [Model Context Protocol (MCP): concepts, clients, and servers](mcp-model-context-protocol.md) — MCP overview, hosts by ecosystem, server discovery, security
+- [Claude Code CLI + MCP](claude-code-cli-mcp-guide.md) — best practices, MCP integration patterns, use-case architectures with Mermaid diagrams
 
 ---
 

@@ -90,6 +90,7 @@ Below is a **representative grouping** for navigation (not exhaustive—prefer t
 | Client | Notes |
 |--------|--------|
 | Claude Desktop | Early widely used MCP host; connect local/remote servers per product docs. |
+| **Claude Code** (CLI) | Terminal agentic coding; connects to MCP servers per [Claude Code MCP docs](https://docs.claude.com/en/docs/claude-code/mcp). See also our [Claude Code CLI + MCP guide](claude-code-cli-mcp-guide.md). |
 | Claude / Anthropic developer docs | [Building connectors / MCP](https://claude.com/docs/connectors/building) (follow current product naming). |
 
 ### OpenAI / ChatGPT
@@ -194,6 +195,7 @@ Official multi-language SDKs are listed from the **Model Context Protocol** GitH
 ## Related reading in this repo
 
 - General curated list: [reading-list.md](reading-list.md)
+- Claude Code CLI best practices & MCP architectures: [claude-code-cli-mcp-guide.md](claude-code-cli-mcp-guide.md)
 
 ---
 

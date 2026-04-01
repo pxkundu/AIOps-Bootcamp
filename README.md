@@ -138,6 +138,7 @@ Curated docs beyond the weekly modules—books, cheatsheets, interview prep, and
 |----------|------------------|
 | [Reading list](resources/reading-list.md) | Books, papers, blogs, and official tool docs |
 | [Model Context Protocol (MCP)](resources/mcp-model-context-protocol.md) | MCP concepts, MCP hosts by LLM ecosystem, server discovery & registry, security |
+| [Claude Code CLI + MCP](resources/claude-code-cli-mcp-guide.md) | Best practices for Claude Code, MCP power patterns, use-case architectures (Mermaid) |
 | [Cheatsheets](resources/cheatsheets/README.md) | PromQL, Ansible, Docker, Kubernetes, and more |
 | [Interview prep](resources/interview-prep/README.md) | Common AIOps interview questions |
 
@@ -536,7 +537,7 @@ AIOps-Bootcamp/
 │   ├── day-05-knowledge-graph-idp/ ← Knowledge Graph IDP on AWS
 │   └── day-06-ai-transformation/   ← AI Transformation Platform
 │
-├── 📚 resources/                    ← Reading list, MCP guide, cheatsheets, interview prep
+├── 📚 resources/                    ← Reading list, MCP & Claude Code guides, cheatsheets, interview prep
 ├── 🐳 infrastructure/              ← Docker & K8s configs
 └── 💬 community/                   ← Discussions & showcase
 ```
