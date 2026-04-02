@@ -25,7 +25,7 @@ By the end of this week, you will:
 | 4 | [Enterprise Observability Hub (Glean Connectors)](day-04-observability/) | 8 hours |
 | 5 | [AWS Cloud IDP with Glean Knowledge Graph](day-05-knowledge-graph-idp/) | 8 hours |
 | 6 | [Enterprise AI Transformation Platform](day-06-ai-transformation/) | 8 hours |
-| 7 | [Documentation & Demo Preparation](documentation/) | 8 hours |
+| 7 | [AI Implementation, Guardrails & Governance](day-07-ai-governance-guardrails/) | 8 hours |
 
 ---
 

@@ -1,0 +1,44 @@
+# AI Governance Control Plane — policy-as-code (example)
+# Extend per tenant / environment. Do not commit real secrets.
+
+version: "1.0"
+
+defaults:
+  max_prompt_chars: 12000
+  max_output_chars: 8000
+  rate_limit_per_minute: 60
+
+tenants:
+  default:
+    risk_tier: T1
+    allow_tools: false
+    deny_topics:
+      - weapons manufacturing
+      - bypass safety
+    injection_patterns:
+      - "(?i)ignore (all )?(previous|prior) instructions"
+      - "(?i)system prompt"
+      - "(?i)jailbreak"
+    require_approval_for_actions: false
+
+  regulated:
+    risk_tier: T2
+    allow_tools: false
+    deny_topics:
+      - classified
+      - insider trading
+    injection_patterns:
+      - "(?i)ignore (all )?(previous|prior) instructions"
+      - "(?i)disregard (the )?policy"
+    block_pii_in_output: true
+    require_approval_for_actions: true
+
+risk_tiers:
+  T0:
+    description: "Public/low sensitivity"
+  T1:
+    description: "Internal business data"
+  T2:
+    description: "PII / regulated / high impact"
+  T3:
+    description: "Safety-critical; human-in-the-loop required"

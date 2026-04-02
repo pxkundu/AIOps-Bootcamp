@@ -435,7 +435,7 @@ graph TD
 
 ## 🏆 Capstone Projects
 
-Week 8 features **6 enterprise-grade capstone projects** that deploy real platforms:
+Week 8 features **six enterprise-grade platform builds** plus a **Day 7 governance capstone** on safe AI implementation:
 
 | # | Project | Tech Stack | What You Build |
 |---|---------|------------|----------------|
@@ -445,6 +445,7 @@ Week 8 features **6 enterprise-grade capstone projects** that deploy real platfo
 | 4 | **[Observability Hub](week-08-capstone/day-04-observability/)** | Glean Connectors, Flask | Multi-source monitoring with alert correlation and MCP action server |
 | 5 | **[Knowledge Graph IDP](week-08-capstone/day-05-knowledge-graph-idp/)** | Glean KG, ECS Fargate, RDS | Enterprise IDP on AWS implementing all 4 Knowledge Graph pillars |
 | 6 | **[AI Transformation Platform](week-08-capstone/day-06-ai-transformation/)** | Glean WAI, Flask, Python | 10-pillar maturity assessment with AI agents for sludge detection and ROI |
+| 7 | **[AI Governance & Guardrails](week-08-capstone/day-07-ai-governance-guardrails/)** | Flask, YAML, policy-as-code | Governance control plane: guardrails, risk tiers, audit trail (replace stub LLM with your provider) |
 
 ---
 
