@@ -65,12 +65,18 @@ python -m unittest discover -s tests -v
 
 | Path | Role |
 |------|------|
-| `config/policies.yaml` | Policy-as-code (tenants, deny lists, injection patterns) |
+| `config/policies.yaml` | Deprecated, superseded by tier-specific policies |
+| `config/policy_strict.yaml` | High-risk AI Gateway Guardrail Policy |
+| `config/policy_relaxed.yaml` | Low-risk / Internal AI Gateway Guardrail Policy |
+| `config/audit_logging_config.json` | Audit trail formatting and log retention configuration |
 | `src/policy_engine.py` | Load and merge tenant policy |
 | `src/guardrails.py` | Input/output checks |
 | `src/audit_logger.py` | JSON Lines audit log under `data/audit.log` |
 | `src/llm_stub.py` | Replace with real LLM client |
 | `src/app.py` | Flask API |
+| `scripts/deploy_governance_platform.sh` | Shell script to simulate AWS ECS Deployment |
+| `scripts/run_audit_report.py` | Audit SIEM reporting simulator |
+| `scripts/simulate_traffic.py` | Generate clean & malicious API requests |
 
 ---
 

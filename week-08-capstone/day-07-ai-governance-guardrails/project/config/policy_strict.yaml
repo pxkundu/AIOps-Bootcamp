@@ -1,0 +1,41 @@
+# Strict Policy for External/High-Risk AI Systems
+name: "Strict External Governance Policy"
+version: "1.0.0"
+risk_tier: "High"
+apply_to:
+  - "customer-facing"
+  - "financial"
+  - "pii-processing"
+
+input_guardrails:
+  max_length: 1000
+  reject_on_injection: true
+  denylist:
+    - "prompt override"
+    - "ignore previous instructions"
+    - "system prompt"
+    - "bypass"
+    - "give me the password"
+    - "confidential"
+
+output_guardrails:
+  redact_pii: true
+  pii_entities:
+    - "PERSON"
+    - "CREDIT_CARD"
+    - "SSN"
+    - "EMAIL"
+    - "IP_ADDRESS"
+  toxicity_threshold: 0.1
+  require_human_approval_for_tools: true
+
+tool_allowlist:
+  - "search_kb"
+  - "check_status"
+  - "calculate_shipping" # safe tools
+
+approval_workflow:
+  required_roles:
+    - "app_owner"
+    - "compliance_officer"
+  escalation_timeout_mins: 30

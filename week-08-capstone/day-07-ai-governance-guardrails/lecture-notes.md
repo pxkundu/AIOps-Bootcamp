@@ -95,8 +95,12 @@ See [docs/diagrams/SOLUTION_ARCHITECTURE.md](docs/diagrams/SOLUTION_ARCHITECTURE
 ## 5. Deliverables checklist
 
 - [ ] Read [docs/GOVERNANCE_FRAMEWORK.md](docs/GOVERNANCE_FRAMEWORK.md)
+- [ ] Read [docs/guides/GUARDRAIL_IMPLEMENTATION_GUIDE.md](docs/guides/GUARDRAIL_IMPLEMENTATION_GUIDE.md)
+- [ ] Read [docs/guides/AUDIT_AND_COMPLIANCE_GUIDE.md](docs/guides/AUDIT_AND_COMPLIANCE_GUIDE.md)
+- [ ] Review Real-world Scenarios in [docs/guides/USE_CASES.md](docs/guides/USE_CASES.md)
 - [ ] Run the capstone project and execute the tests
 - [ ] Extend **one** policy: add a new deny-list term or a new risk tier rule
+- [ ] Run the traffic simulation script `project/scripts/simulate_traffic.py`
 - [ ] Document your architecture choice in 1 page (for your portfolio)
 
 ---

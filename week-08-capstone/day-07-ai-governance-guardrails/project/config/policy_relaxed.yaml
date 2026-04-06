@@ -1,0 +1,32 @@
+# Relaxed Policy for Internal/Low-Risk AI Systems
+name: "Relaxed Internal Governance Policy"
+version: "1.0.0"
+risk_tier: "Low"
+apply_to:
+  - "internal-search"
+  - "summarization"
+  - "code-assist"
+
+input_guardrails:
+  max_length: 4000
+  reject_on_injection: false  # Log only, do not block for internal dev tools
+  denylist:
+    - "corporate secrets"
+    - "salary information"
+
+output_guardrails:
+  redact_pii: false  # Internal tools may need to process internal employee names
+  pii_entities: []
+  toxicity_threshold: 0.5
+  require_human_approval_for_tools: false
+
+tool_allowlist:
+  - "search_wiki"
+  - "read_jira"
+  - "github_read_only"
+  - "run_local_script"
+
+approval_workflow:
+  required_roles:
+    - "developer" # Self-approval
+  escalation_timeout_mins: 0

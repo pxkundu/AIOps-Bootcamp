@@ -1,0 +1,35 @@
+{
+  "audit_logging": {
+    "enabled": true,
+    "log_level": "INFO",
+    "retention_days": 365,
+    "destination": "s3://enterprise-ai-audit-logs/governance/",
+    "export_format": "jsonl",
+    "fields_to_log": [
+      "timestamp",
+      "user_id",
+      "session_id",
+      "app_context",
+      "input_length",
+      "output_length",
+      "policy_applied",
+      "risk_tier",
+      "tools_requested",
+      "tools_executed",
+      "blocked_by_guardrail",
+      "guardrail_reason"
+    ],
+    "masking": {
+      "mask_pii": true,
+      "mask_prompts": false,
+      "mask_outputs": false
+    },
+    "alerting": {
+      "notify_on_injection_attempt": true,
+      "notify_channel": "slack_secops_alerts",
+      "thresholds": {
+        "max_blocked_requests_per_minute": 10
+      }
+    }
+  }
+}
