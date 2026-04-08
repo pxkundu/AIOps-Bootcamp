@@ -536,7 +536,9 @@ AIOps-Bootcamp/
 │   ├── day-03-idp-platform/        ← IDP: OpenWebUI + Bedrock
 │   ├── day-04-observability/       ← Observability Hub
 │   ├── day-05-knowledge-graph-idp/ ← Knowledge Graph IDP on AWS
-│   └── day-06-ai-transformation/   ← AI Transformation Platform
+│   ├── day-06-ai-transformation/   ← AI Transformation Platform
+│   ├── day-07-ai-governance-guardrails/ ← AI Implementation & Guardrails
+│   └── day-08-mcp-deep-dive/       ← Model Context Protocol (MCP) Deep Dive
 │
 ├── 📚 resources/                    ← Reading list, MCP & Claude Code guides, cheatsheets, interview prep
 ├── 🐳 infrastructure/              ← Docker & K8s configs

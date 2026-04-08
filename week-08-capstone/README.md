@@ -26,6 +26,7 @@ By the end of this week, you will:
 | 5 | [AWS Cloud IDP with Glean Knowledge Graph](day-05-knowledge-graph-idp/) | 8 hours |
 | 6 | [Enterprise AI Transformation Platform](day-06-ai-transformation/) | 8 hours |
 | 7 | [AI Implementation, Guardrails & Governance](day-07-ai-governance-guardrails/) | 8 hours |
+| 8 | [Model Context Protocol (MCP) Deep Dive](day-08-mcp-deep-dive/) | 8 hours |
 
 ---
 
